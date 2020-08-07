@@ -1,0 +1,34 @@
+
+	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="128" height="128" viewBox="0 0 100 100">
+
+
+
+
+            <g transform="
+                    translate(50 50)
+                    translate(0 0)  scale(1)  
+                    translate(-50 -50)
+                    ">
+
+
+                <g transform="scale(0.33751748719219604) translate(18.24622344970703 -9.750069618225098)" id="picture">
+    <g transform="matrix(3.29383 0 0 3.33333 60.443 38)" stroke-opacity="null" stroke-width="null" stroke="null">
+        <ellipse transform="matrix(.91786 0 0 .95513 -36.281 -13.222)" ry="46.5" rx="49" cy="51.5" cx="62.5" fill="#fff"/>
+        <ellipse transform="matrix(.43463 0 0 .8883 -19.91 -41.856)" ry="18.5" rx="20" cy="56.5" cx="84.5" fill="#306856"/>
+        <ellipse transform="matrix(.33119 0 0 .46465 -6.23 -7.81)" ry="51.5" rx="13.5" cy="66.5" cx="72" fill="#fff"/>
+        <ellipse transform="translate(0 -1)" cy="177" cx="284.5" fill="#fff"/>
+        <rect rx="20" transform="matrix(8.10552 0 0 .16282 -442.712 43.547)" height="42" width="5" y="64" x="53.5" fill="#396849"/>
+        <rect rx="4" transform="matrix(1.26797 0 0 1.68952 -59.845 -108.049)" height="42" width="5" y="64" x="53.5" fill="#396849"/>
+        <path transform="matrix(.39122 0 0 1.28677 -6.5 23.675)" fill="#fff" d="M65.5-11h26V1h-26z"/>
+        <ellipse transform="matrix(.28726 0 0 .3225 -.82 -10.748)" ry="18.5" rx="20" cy="56.5" cx="84.5" fill="#396849"/>
+        <rect rx="4" transform="matrix(1.20048 0 0 .75698 -43.983 -28.76)" height="42" width="5" y="64" x="53.5" fill="#396849"/>
+        <rect rx="20" transform="matrix(7.70551 0 0 .14969 -391.365 37.54)" height="42" width="5" y="64" x="53.5" fill="#396849"/>
+        <rect rx="4" transform="matrix(1.26673 0 0 .63372 -30.7 8.346)" height="42" width="5" y="64" x="53.5" fill="#396849"/>
+    </g>
+</g>
+
+
+            </g>
+
+
+	</svg>
