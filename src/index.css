@@ -40,9 +40,11 @@ p {
   justify-content: center;
 }
 label {
-  width: 75px;
+  width: 200px;
   margin-right: 10px;
-  font-size: 18px
+  font-size: 18px;
+  padding-right:15px;
+  text-align: right;
 }
 a:visited {
   color: rgba(2, 66, 39, 0.694);
