@@ -1,6 +1,8 @@
 *{
   font-family: "Lucida Console", Monaco, monospace;
+  background: mintcream;
 }
+
 
 .App-header, .link-box, #tracking-container{
   display:flex;
