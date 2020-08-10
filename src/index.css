@@ -39,6 +39,7 @@ p {
 }
 label {
   width: 75px;
+  margin-right: 10px;
 }
 a:visited {
   text-decoration: none;
