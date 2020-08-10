@@ -44,7 +44,7 @@ label {
 a:visited {
   color: rgba(0, 47, 255, 0.973);
 }
-.input-label:focus {
+input:focus {
   background: rgb(2, 138, 2, 0.3);
 }
 @media screen and (min-width: 700px){
