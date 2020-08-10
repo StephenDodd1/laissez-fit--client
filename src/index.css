@@ -49,6 +49,9 @@ a:visited {
 input:focus {
   background: rgb(2, 138, 2, 0.3);
 }
+button {
+  width: 40px;
+}
 @media screen and (min-width: 700px){
   #tracking-metrics {
     display: flex;
