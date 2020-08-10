@@ -51,7 +51,7 @@ a:visited {
   color: rgba(2, 66, 39, 0.694);
 }
 input:focus {
-  background: rgb(2, 66, 39, 0.694);
+  background: rgb(2, 138, 2, 0.3);
   outline: white;
 }
 input { 
@@ -70,7 +70,7 @@ button {
   height: 30px;
   border-radius: 2px;
   color: white;
-  background: rgba(2, 66, 39, 0.694)
+  background: rgba(1, 46, 27, 0.899)
 }
 @media screen and (min-width: 700px){
   #tracking-metrics {
