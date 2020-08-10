@@ -40,8 +40,8 @@ p {
 label {
   width: 75px;
 }
-.label-input {
-
+.label-input:focus {
+  background: rgb(2, 138, 2, 0.3);
 }
 @media screen and (min-width: 700px){
   #tracking-metrics {
