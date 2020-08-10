@@ -37,6 +37,9 @@ p {
   flex-direction: column;
   justify-content: center;
 }
+label {
+  width: 75px;
+}
 .label-input {
 
 }
