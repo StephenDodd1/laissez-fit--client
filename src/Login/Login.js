@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Login() {
   return (
-    <div>
+    <div className='centered-form'>
       <form className="credentials-box">
         <div className="input-label">
           <label for="username">Username</label>

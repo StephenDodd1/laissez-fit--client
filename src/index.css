@@ -27,11 +27,15 @@
 p {
   margin: 30px;
 }
-
+.centered-form {
+  display: block;
+  width: 90%
+}
 .credentials-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: auto;
 }
 .label-input {
 
