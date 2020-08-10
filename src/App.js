@@ -24,6 +24,7 @@ function App() {
         <Route path="/Login" render={() => <Login />} />
         <Route path="/Signup" render={() => <Signup />} />
         <Route path="/Demo" render={() => <Demo />} />
+        <Route path="/Articles" render={() => <Articles />} />
       </Switch>
     </div>
   );
