@@ -11,11 +11,11 @@ export default function Signup() {
         </div>
         <div className="input-label">
           <label for="password">Password</label>
-          <input id="password" />
+          <input id="password" type='password' />
         </div>
         <div className="input-label">
           <label for="confirm-password">Confirm Password</label>
-          <input id="confirm password" />
+          <input id="confirm password" type='password' />
         </div>
         <div className="input-label">
           <label for="Name">Name</label>
@@ -23,7 +23,7 @@ export default function Signup() {
         </div>
         <div className="input-label">
           <label for="dob">Date of Birth</label>
-          <input id="dob" />
+          <input id="dob" placeholder='ex: 02/20/2000' />
         </div>
         <button>Signup</button>
         <Link to='/Demo'>Demo</Link>
