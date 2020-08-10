@@ -9,7 +9,7 @@ export default class Tracking extends Component {
     const today = new Date();
     return (
       <div id="tracking-container">
-        <Link to='Articles'/>
+        <Link to='Articles'>Articles</Link>
         <div id="date-container">
           <h2>{`${today.getMonth()}/${today.getDate()}/${today.getFullYear()}`}</h2>
         </div>
