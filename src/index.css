@@ -40,6 +40,7 @@ p {
   justify-content: center;
 }
 label {
+  display: inline-block;
   width: 200px;
   margin-right: 10px;
   font-size: 18px;
@@ -57,11 +58,12 @@ input {
   background: white;
   border-radius: 2px;
   height: 30px;
+
 }
 .input-label {
   display: inline-block;
   margin-bottom: 8px;
-  width: 300px;
+  width: 500px;
 }
 button {
   width: 75px;
