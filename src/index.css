@@ -28,14 +28,14 @@ p {
   margin: 30px;
 }
 .centered-form {
-  display: inline-block;
-  width: 90%
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .credentials-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 auto;
 }
 .label-input {
 
