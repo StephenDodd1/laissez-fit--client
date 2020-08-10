@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 
 export default function Signup() {
   return (
@@ -24,6 +25,8 @@ export default function Signup() {
           <label for="dob">Date of Birth</label>
           <input id="dob" />
         </div>
+        <button>Signup</button>
+        <Link to='/Demo'>Demo</Link>
       </form>
     </div>
   );
