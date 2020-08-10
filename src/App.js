@@ -5,6 +5,7 @@ import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
 import Demo from "./Demo/Demo";
 import Articles from "./Articles/Articles"
+import Article from "./Article/Article"
 import { Route, Link, Switch, Redirect } from "react-router-dom";
 function App() {
   return (
