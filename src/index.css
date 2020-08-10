@@ -40,6 +40,9 @@ p {
 label {
   width: 75px;
 }
+a:visited {
+  text-decoration: none;
+}
 .label-input:focus {
   background: rgb(2, 138, 2, 0.3);
 }
