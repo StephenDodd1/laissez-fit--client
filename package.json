@@ -1,5 +1,6 @@
 {
   "name": "laissez-fit--client",
+  "author": "StephenDodd",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

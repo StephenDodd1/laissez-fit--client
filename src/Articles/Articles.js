@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Article from '../Article/Article';
+import { Link } from 'react-router-dom'
 
 export default class Articles extends Component {
   render() {
@@ -7,7 +9,7 @@ export default class Articles extends Component {
         <div>
           <h3>Fitness</h3>
           <ul>
-            <li>Article 1</li>
+            <li><Link to='/Article'>Article 1</Link></li>
             <li>Article 2</li>
             <li>Article 3</li>
             <li>Article 4</li>
