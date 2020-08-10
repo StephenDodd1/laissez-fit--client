@@ -3,22 +3,28 @@ import logo from "./Laissezfit.svg";
 import Landing from "./Landing/Landing";
 import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
-import { Route, Link } from "react-router-dom";
+import Demo from "./Demo/Demo";
+import { Route, Link, Switch, Redirect } from "react-router-dom";
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className='links'>
-          <Link to="/login">Login</Link>
-          <Link to="/signup" >Signup</Link>
+        <div className="links">
+          <Link to="/Login">login</Link>
+          <Link to="/Signup">signup</Link>
         </div>
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Laissez.fit</h1>
       </header>
-        <Landing />
-        <Route path="/login" render={() => <Login />} />
-        <Route path="/signup" render={() => <Signup />} />
-      
+      <Switch>
+        <Route exact path="/">
+          <Redirect to="/Landing" />
+        </Route>
+        <Route path="/Landing" render={() => <Landing />} />
+        <Route path="/Login" render={() => <Login />} />
+        <Route path="/Signup" render={() => <Signup />} />
+        <Route path="/Demo" render={() => <Demo />} />
+      </Switch>
     </div>
   );
 }
