@@ -51,6 +51,7 @@ a:visited {
 }
 input:focus {
   background: rgb(2, 138, 2, 0.3);
+  outline: white;
 }
 input { 
   background: white;
