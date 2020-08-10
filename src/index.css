@@ -58,7 +58,9 @@ input {
   height: 30px;
 }
 .input-label {
+  display: inline-block;
   margin-bottom: 8px;
+  width: 300px;
 }
 button {
   width: 75px;
