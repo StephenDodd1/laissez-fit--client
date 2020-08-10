@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import Comments from '../Comments/Comments'
 export default class Article extends Component {
   render() {
     return (
