@@ -42,9 +42,9 @@ label {
   margin-right: 10px;
 }
 a:visited {
-  text-decoration: none;
+  color: rgba(0, 47, 255, 0.973);
 }
-.label-input:focus {
+.input-label:focus {
   background: rgb(2, 138, 2, 0.3);
 }
 @media screen and (min-width: 700px){
