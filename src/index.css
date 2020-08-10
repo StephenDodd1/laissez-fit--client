@@ -49,8 +49,13 @@ a:visited {
 input:focus {
   background: rgb(2, 138, 2, 0.3);
 }
+input { 
+  background: white;
+  border-radius: 2px;
+}
 button {
   width: 40px;
+  border-radius: 2px;
 }
 @media screen and (min-width: 700px){
   #tracking-metrics {
