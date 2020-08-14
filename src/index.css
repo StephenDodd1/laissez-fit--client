@@ -70,7 +70,7 @@ button {
   height: 30px;
   border-radius: 2px;
   color: white;
-  background: rgba(1, 46, 27, 0.699)
+  background: rgb(1, 46, 27)
 }
 @media screen and (min-width: 700px){
   #tracking-metrics {
