@@ -12,8 +12,8 @@ class App extends Component {
   submitLogin = e => {
     e.preventDefault();
     const un = e.target.username.value;
-    const pw = e.password.value;
-    console.log('un', un, username, 'pw', pw, password)
+    const pw = e.target.password.value;
+    console.log('un', un,'pw', pw)
   };
   render() {
   return (
