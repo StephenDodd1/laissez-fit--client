@@ -1,7 +1,11 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-export default function Login() {
+export default class Login extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
   return (
     <div className="centered-form">
       <Link to="/Demo">Demo</Link>
@@ -17,5 +21,5 @@ export default function Login() {
         <button>Login</button>
       </form>
     </div>
-  );
+  )};
 }
