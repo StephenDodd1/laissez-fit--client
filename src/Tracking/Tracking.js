@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 export default class Tracking extends Component {
   constructor(props) {
@@ -9,11 +9,13 @@ export default class Tracking extends Component {
     const today = new Date();
     return (
       <div id="tracking-container">
-        <Link to='Articles'>Articles</Link>
+        <Link to="Articles">Articles</Link>
         <div id="date-container">
+          <i class="fa fa-angle-double-left" aria-hidden="true"></i>
           <h2>{`${today.getMonth()}/${today.getDate()}/${today.getFullYear()}`}</h2>
+          <i class="fa fa-angle-double-right" aria-hidden="true"></i>
         </div>
-        <div id='tracking-metrics'>
+        <div id="tracking-metrics">
           <div id="fitness-container">
             <h3>Fitness </h3>
             <ul>
@@ -24,7 +26,7 @@ export default class Tracking extends Component {
               <li>Activity 5</li>
             </ul>
           </div>
-          <div id='nutrition-container'>
+          <div id="nutrition-container">
             <h3>Nutrition</h3>
             <ul>
               <li>Calories 1</li>
