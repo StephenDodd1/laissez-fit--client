@@ -16,7 +16,7 @@ export default class Login extends Component {
         </div>
         <div className="input-label">
           <label for="password">Password</label>
-          <input id="password" name="password" type="password" />
+          <input id="password" name="password" type="password" autocomplete='current-password'/>
         </div>
         <button>Login</button>
       </form>
