@@ -29,7 +29,7 @@ class App extends Component {
           <Redirect to="/Landing" />
         </Route>
         <Route path="/Landing" render={() => <Landing />} />
-        <Route path="/Login" render={() => <Login />} />
+        <Route path="/Login" render={() => <Login submitLogin={this.submitLogin} />} />
         <Route path="/Signup" render={() => <Signup />} />
         <Route path="/Demo" render={() => <Demo />} />
         <Route path="/Articles" render={() => <Articles />} />
