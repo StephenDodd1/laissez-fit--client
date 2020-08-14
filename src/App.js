@@ -11,7 +11,6 @@ import { render } from "@testing-library/react";
 class App extends Component {
   submitLogin = e => {
     e.preventDefault();
-    const {username, password} = e.target.value;
     const un = e.target.username.value;
     const pw = e.password.value;
     console.log('un', un, username, 'pw', pw, password)
