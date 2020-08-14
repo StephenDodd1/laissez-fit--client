@@ -5,14 +5,14 @@ export default function Login() {
   return (
     <div className="centered-form">
       <Link to="/Demo">Demo</Link>
-      <form className="credentials-box">
+      <form className="credentials-box" onSubmit={this.props.submitLogin}>
         <div className="input-label">
           <label for="username">Username</label>
-          <input id="username" />
+          <input id="username" name="username" />
         </div>
         <div className="input-label">
           <label for="password">Password</label>
-          <input id="password" type="password" />
+          <input id="password" name="password" type="password" />
         </div>
         <button>Login</button>
       </form>

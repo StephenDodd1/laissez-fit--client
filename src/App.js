@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import logo from "./Laissezfit.svg";
 import Landing from "./Landing/Landing";
 import Login from "./Login/Login";
@@ -7,7 +7,13 @@ import Demo from "./Demo/Demo";
 import Articles from "./Articles/Articles"
 import Article from "./Article/Article"
 import { Route, Link, Switch, Redirect } from "react-router-dom";
-function App() {
+import { render } from "@testing-library/react";
+class App extends Component {
+  submitLogin = e => {
+    e.preventDefault();
+    console.log(e)
+  };
+  render() {
   return (
     <div className="App">
       <header className="App-header">
@@ -30,7 +36,7 @@ function App() {
         <Route path="/Article" render={() => <Article />} />
       </Switch>
     </div>
-  );
+  )}
 }
 
 export default App;
