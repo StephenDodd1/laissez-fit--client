@@ -11,12 +11,12 @@ export default class Login extends Component {
       <Link to="/Demo">Demo</Link>
       <form className="credentials-box" onSubmit={this.props.submitLogin}>
         <div className="input-label">
-          <label for="username">Username</label>
+          <label htmlFor="username">Username</label>
           <input id="username" name="username" />
         </div>
         <div className="input-label">
-          <label for="password">Password</label>
-          <input id="password" name="password" type="password" autocomplete='current-password'/>
+          <label htmlFor="password">Password</label>
+          <input id="password" name="password" type="password" autoComplete='current-password'/>
         </div>
         <button>Login</button>
       </form>

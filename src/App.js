@@ -8,12 +8,28 @@ import Articles from "./Articles/Articles"
 import Article from "./Article/Article"
 import { Route, Link, Switch, Redirect } from "react-router-dom";
 import { render } from "@testing-library/react";
+import API_URL from './config.js';
 class App extends Component {
   submitLogin = e => {
     e.preventDefault();
     const un = e.target.username.value;
     const pw = e.target.password.value;
     console.log('un', un,'pw', pw)
+    const userToken = btoa(`${un}:${pw}`)
+    fetch(`${API_URL}/api/user`, {
+      method: "POST",
+      mode: "cors",
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `basic ${userToken}`
+      }
+    })
+    .then(res => {
+      if(!res.ok){
+        return alert('login failed')
+      }
+    })
   };
   render() {
   return (
