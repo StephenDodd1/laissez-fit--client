@@ -47,8 +47,17 @@ label {
   padding-right:15px;
   text-align: right;
 }
+.metrics-labels {
+  text-align: right;
+}
 a:visited {
   color: rgba(2, 66, 39, 0.694);
+}
+textarea {
+  height: 112px;
+  width: 90%;
+  background: white;
+  margin-left: 5%;
 }
 input:focus {
   background: rgb(2, 138, 2, 0.3);
@@ -58,7 +67,7 @@ input {
   background: white;
   border-radius: 2px;
   height: 30px;
-
+  width: 230px;
 }
 .input-label {
   display: inline-block;
@@ -72,12 +81,43 @@ button {
   color: white;
   background: rgb(1, 46, 27)
 }
+.fa {
+  font-size: 200%;
+}
+#date-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 280px;
+  height: 30px;
+  margin-top: 10px;
+}
+#date-element {
+  margin-top: 0px;
+}
 @media screen and (min-width: 700px){
   #tracking-metrics {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     width: 90%
+  }
+  .fitness-container {
+    width: 30%;
+  }
+  .metrics-labels {
+    text-align: left;
+  }
+  textarea {
+    width: 198%;
+    margin-top: 5px;
+    margin-left: 1%;
+  }
+  input {
+    width: 90%;
+  }
+  #diary-label {
+    padding-top: 35px;
   }
 }
 
