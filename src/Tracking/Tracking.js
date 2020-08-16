@@ -5,55 +5,94 @@ export default class Tracking extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      month: new Date().getMonth()+1,
+      month: new Date().getMonth() + 1,
       day: new Date().getDate(),
-      year: new Date().getFullYear()
-    }
+      year: new Date().getFullYear(),
+    };
   }
-  
+
   backOneDay = () => {
     const a = this.state;
-    this.setState({ day: --a.day });
-    console.log(new Date(`${a.month}/${a.day}/${a.year}`))
-  }
+    if (a.day === 1) {
+      if (a.month === 1) {
+        this.setState({
+          month: 12,
+          day: 31,
+          year: --this.state.year,
+        });
+      } else if (a.month === 3 && a.year % 4 === 0) {
+        this.setState({ day: 29, month: 2 });
+      } else if (a.month === 3 && a.year % 4 !== 0) {
+        this.setState({ day: 28, month: 2 });
+      } else if (
+        a.month === 5 ||
+        a.month === 7 ||
+        a.month === 10 ||
+        a.month === 12
+      ) {
+        this.setState({ day: 30, month: --a.month });
+      } else if (
+        a.month === 2 ||
+        a.month === 4 ||
+        a.month === 6 ||
+        a.month === 8 ||
+        a.month === 9 ||
+        a.month === 11
+      ) {
+        this.setState({ day: 31, month: --a.month });
+      }
+    } else {
+      this.setState({
+        day: --a.day,
+      });
+    }
+  };
   forwardOneDay = () => {
     const a = this.state;
-    if(a.month === 12 && a.day === 31) {
+    if (a.month === 12 && a.day === 31) {
       this.setState({
-        month: 1, day: 1, year: ++this.state.year
-      })
+        month: 1,
+        day: 1,
+        year: ++this.state.year,
+      });
+    } else if (a.day >= 31) {
+      this.setState({ day: 1, month: a.month + 1 });
+    } else if (a.month === 2 && a.day + 1 === 29 && a.year % 4 === 0) {
+      this.setState({ day: ++a.day });
+    } else if (a.month === 2 && a.day + 1 === 29 && a.year % 4 !== 0) {
+      this.setState({ day: 1, month: ++a.month });
+    } else if (a.month === 2 && a.day + 1 > 29 && a.year % 4 === 0) {
+      this.setState({ month: ++a.month });
+    } else if (
+      (a.day + 1 === 31 && a.month <= 6 && a.month % 2 === 1) ||
+      (a.day + 1 === 31 && a.month === 7) ||
+      a.month === 8 ||
+      (a.day + 1 === 31 && a.month < 13 && a.month > 8 && a.month % 2 === 0)
+    ) {
+      this.setState({ day: ++a.day });
+    } else if (a.day + 1 > 30) {
+      this.setState({ day: 1, month: ++a.month });
+      console.log(new Date(`${a.month}/${a.day}/${a.year}`));
+    } else {
+      this.setState({ day: ++this.state.day });
     }
-    else if( a.day >= 31 ){
-      this.setState({ day: 1, month: a.month + 1 })}
-    else if(a.month === 2 && a.day + 1 === 29 && a.year % 4 === 0) {
-      this.setState({ day: ++a.day})
-    }
-    else if(a.month === 2 && a.day + 1 === 29 && a.year % 4 !== 0) {
-      this.setState({ day: 1, month: ++a.month})
-    }
-    else if(a.month === 2 && a.day + 1 > 29 && a.year % 4 === 0) {
-      this.setState({ month: ++a.month})
-    }
-    else if (a.day +1 === 31 && a.month <= 6 && a.month % 2 === 1 
-      || a.day +1 === 31 && a.month === 7 || a.month === 8 
-      || a.day +1 === 31 && a.month < 13 && a.month > 8 && a.month % 2 === 0 ) {
-    this.setState({ day: ++a.day })}
-    else if (a.day +1 > 30) {
-    this.setState({ day: 1, month: ++a.month });
-    console.log(new Date(`${a.month}/${a.day}/${a.year}`))
-    }
-    else {this.setState({ day: ++this.state.day})}
-  }
+  };
   render() {
     return (
       <div id="tracking-container">
         <Link to="Articles">Articles</Link>
         <div id="date-container">
-          <i className="fa fa-angle-double-left" aria-hidden="true"
-          onClick={this.backOneDay}></i>
+          <i
+            className="fa fa-angle-double-left"
+            aria-hidden="true"
+            onClick={this.backOneDay}
+          ></i>
           <h2 id="date-element">{`${this.state.month}/${this.state.day}/${this.state.year}`}</h2>
-          <i className="fa fa-angle-double-right" aria-hidden="true"
-          onClick={this.forwardOneDay}></i>
+          <i
+            className="fa fa-angle-double-right"
+            aria-hidden="true"
+            onClick={this.forwardOneDay}
+          ></i>
         </div>
         <div id="tracking-metrics">
           <form id="fitness-container" className="fitness-container">
@@ -90,8 +129,7 @@ export default class Tracking extends Component {
               placeholder="10000 steps"
               className="fitness-inputs"
             />
-            <label className="metrics-labels" 
-            id="diary-label" htmlFor="dia">
+            <label className="metrics-labels" id="diary-label" htmlFor="dia">
               Diary:
             </label>
             <textarea
