@@ -81,8 +81,11 @@ button {
   color: white;
   background: rgb(1, 46, 27)
 }
-.fa {
+.fa{
   font-size: 200%;
+}
+#fa-search {
+  font-size: 170%
 }
 #date-container {
   display: flex;
@@ -94,6 +97,12 @@ button {
 }
 #date-element {
   margin-top: 0px;
+}
+#tracking-submit {
+  background: none;
+  border: none;
+  padding: none;
+  color: black;
 }
 @media screen and (min-width: 700px){
   #tracking-metrics {

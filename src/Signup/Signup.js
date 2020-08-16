@@ -6,23 +6,23 @@ export default function Signup() {
     <div className='centered-form'>
       <form className='credentials-box'>
         <div className="input-label">
-          <label for="username">Username</label>
+          <label htmlFor="username">Username</label>
           <input id="username" />
         </div>
         <div className="input-label">
-          <label for="password">Password</label>
+          <label htmlFor="password">Password</label>
           <input id="password" type='password' />
         </div>
         <div className="input-label">
-          <label for="confirm-password">Confirm Password</label>
+          <label htmlFor="confirm-password">Confirm Password</label>
           <input id="confirm password" type='password' />
         </div>
         <div className="input-label">
-          <label for="Name">Name</label>
+          <label htmlFor="Name">Name</label>
           <input id="name" />
         </div>
         <div className="input-label">
-          <label for="dob">Date of Birth</label>
+          <label htmlFor="dob">Date of Birth</label>
           <input id="dob" placeholder='ex: 02/20/2000' />
         </div>
         <button>Signup</button>

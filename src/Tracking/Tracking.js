@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
+import { API_URL } from "../config";
+import { UserContext } from "../context";
 export default class Tracking extends Component {
   constructor(props) {
     super(props);
@@ -8,100 +9,33 @@ export default class Tracking extends Component {
       month: new Date().getMonth() + 1,
       day: new Date().getDate(),
       year: new Date().getFullYear(),
+      tracking: null,
     };
   }
+  static contextType = UserContext;
 
-  backOneDay = () => {
-    const a = this.state;
-    if (a.day === 1) {
-      if (a.month === 1) {
-        this.setState({
-          month: 12,
-          day: 31,
-          year: --this.state.year,
-        });
-      } else if (a.month === 3 && a.year % 4 === 0) {
-        this.setState({ day: 29, month: 2 });
-      } else if (a.month === 3 && a.year % 4 !== 0) {
-        this.setState({ day: 28, month: 2 });
-      } else if (
-        a.month === 5 ||
-        a.month === 7 ||
-        a.month === 10 ||
-        a.month === 12
-      ) {
-        this.setState({ day: 30, month: --a.month });
-      } else if (
-        a.month === 2 ||
-        a.month === 4 ||
-        a.month === 6 ||
-        a.month === 8 ||
-        a.month === 9 ||
-        a.month === 11
-      ) {
-        this.setState({ day: 31, month: --a.month });
-      }
-    } else {
-      this.setState({
-        day: --a.day,
-      });
-    }
+  updateTracking = (e) => {
+    e.preventDefault();
+    console.log(e.target.slp.value);
   };
-  forwardOneDay = () => {
-    const a = this.state;
-    if (a.month === 12 && a.day === 31) {
-      this.setState({
-        month: 1,
-        day: 1,
-        year: ++this.state.year,
-      });
-    } else if (a.day >= 31) {
-      this.setState({ day: 1, month: a.month + 1 });
-    } else if (a.month === 2 && a.day + 1 === 29 && a.year % 4 === 0) {
-      this.setState({ day: ++a.day });
-    } else if (a.month === 2 && a.day + 1 === 29 && a.year % 4 !== 0) {
-      this.setState({ day: 1, month: ++a.month });
-    } else if (a.month === 2 && a.day + 1 > 29 && a.year % 4 === 0) {
-      this.setState({ month: ++a.month });
-    } else if (
-      (a.day + 1 === 31 && a.month <= 6 && a.month % 2 === 1) ||
-      (a.day + 1 === 31 && a.month === 7) ||
-      a.month === 8 ||
-      (a.day + 1 === 31 && a.month < 13 && a.month > 8 && a.month % 2 === 0)
-    ) {
-      this.setState({ day: ++a.day });
-    } else if (a.day + 1 > 30) {
-      this.setState({ day: 1, month: ++a.month });
-      console.log(new Date(`${a.month}/${a.day}/${a.year}`));
-    } else {
-      this.setState({ day: ++this.state.day });
-    }
-  };
+  componentDidMount(){
+    this.setState({tracking: this.props.tracking})
+  }
   render() {
     return (
       <div id="tracking-container">
-        <Link to="Articles">Articles</Link>
-        <div id="date-container">
-          <i
-            className="fa fa-angle-double-left"
-            aria-hidden="true"
-            onClick={this.backOneDay}
-          ></i>
-          <h2 id="date-element">{`${this.state.month}/${this.state.day}/${this.state.year}`}</h2>
-          <i
-            className="fa fa-angle-double-right"
-            aria-hidden="true"
-            onClick={this.forwardOneDay}
-          ></i>
-        </div>
-        <div id="tracking-metrics">
-          <form id="fitness-container" className="fitness-container">
+        <form onSubmit={this.updateTracking} id="tracking-metrics">
+          <button type="submit" id="tracking-submit">
+            <i className="fa fa-upload"></i>
+          </button>
+          <div id="fitness-container" className="fitness-container">
             <h3>Fitness </h3>
             <label className="metrics-labels" htmlFor="Sleep">
               Sleep:
             </label>
             <input
               name="slp"
+              defaultValue={this.props.tracking.slp}
               placeholder="Minutes"
               className="fitness-inputs"
             />
@@ -110,6 +44,7 @@ export default class Tracking extends Component {
             </label>
             <input
               name="men"
+              defaultValue={this.props.tracking.men}
               placeholder="Energized, happy"
               className="fitness-inputs"
             />
@@ -118,6 +53,7 @@ export default class Tracking extends Component {
             </label>
             <input
               name="act"
+              defaultValue={this.props.tracking.act}
               placeholder="Jacuzzi, laundry"
               className="fitness-inputs"
             />
@@ -126,6 +62,7 @@ export default class Tracking extends Component {
             </label>
             <input
               name="stp"
+              defaultValue={this.props.tracking.stp}
               placeholder="10000 steps"
               className="fitness-inputs"
             />
@@ -134,17 +71,19 @@ export default class Tracking extends Component {
             </label>
             <textarea
               name="dia"
+              defaultValue={this.props.tracking.dia}
               placeholder="You can use this space for whatever you'd like"
               className="fitness-inputs"
             />
-          </form>
-          <form id="nutrition-container" className="fitness-container">
+          </div>
+          <div id="nutrition-container" className="fitness-container">
             <h3>Nutrition</h3>
             <label className="metrics-labels" htmlFor="cal">
               Calories:
             </label>
             <input
               name="cal"
+              defaultValue={this.props.tracking.cal}
               placeholder="2000 kcal"
               className="nutrition-inputs"
             />
@@ -153,6 +92,7 @@ export default class Tracking extends Component {
             </label>
             <input
               name="fat"
+              defaultValue={this.props.tracking.fat}
               placeholder="44g - 77g"
               className="nutrition-inputs"
             />
@@ -161,6 +101,7 @@ export default class Tracking extends Component {
             </label>
             <input
               name="car"
+              defaultValue={this.props.tracking.car}
               placeholder="225g - 325g"
               className="nutrition-inputs"
             />
@@ -169,21 +110,28 @@ export default class Tracking extends Component {
             </label>
             <input
               name="fib"
+              defaultValue={this.props.tracking.fib}
               placeholder="25g - 30g"
               className="nutrition-inputs"
             />
             <label className="metrics-labels" htmlFor="pro">
               Protein:
             </label>
-            <input name="pro" placeholder="~50g" className="nutrition-inputs" />
-          </form>
-          <form id="stats-container" className="fitness-container">
+            <input
+              name="pro"
+              defaultValue={this.props.tracking.pro}
+              placeholder="~50g"
+              className="nutrition-inputs"
+            />
+          </div>
+          <div id="stats-container" className="fitness-container">
             <h3>Vitals</h3>
             <label className="metrics-labels" htmlFor="rhr">
               Resting HR:
             </label>
             <input
               name="rhr"
+              defaultValue={this.props.tracking.rhr}
               placeholder="60 - 100 bpm"
               className="nutrition-inputs"
             />
@@ -192,22 +140,34 @@ export default class Tracking extends Component {
             </label>
             <input
               name="mhr"
+              defaultValue={this.props.tracking.mhr}
               placeholder="120+ bpm"
               className="nutrition-inputs"
             />
             <label className="metrics-labels" htmlFor="bps">
               Systolic BP:
             </label>
-            <input name="bps" placeholder="~120" className="nutrition-inputs" />
+            <input
+              name="bps"
+              defaultValue={this.props.tracking.bps}
+              placeholder="~120"
+              className="nutrition-inputs"
+            />
             <label className="metrics-labels" htmlFor="bpd">
               Diastolic BP:
             </label>
-            <input name="bpd" placeholder="~80" className="nutrition-inputs" />
+            <input
+              name="bpd"
+              defaultValue={this.props.tracking.bpd}
+              placeholder="~80"
+              className="nutrition-inputs"
+            />
             <label className="metrics-labels" htmlFor="bls">
               Blood Sugar:
             </label>
             <input
               name="bls"
+              defaultValue={this.props.tracking.bls}
               placeholder="Depends on time"
               className="nutrition-inputs"
             />
@@ -216,6 +176,7 @@ export default class Tracking extends Component {
             </label>
             <input
               name="lbs"
+              defaultValue={this.props.tracking.lbs}
               placeholder="in pounds"
               className="nutrition-inputs"
             />
@@ -224,11 +185,12 @@ export default class Tracking extends Component {
             </label>
             <input
               name="ins"
+              defaultValue={this.props.tracking.ins}
               placeholder="in inches"
               className="nutrition-inputs"
             />
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     );
   }

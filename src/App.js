@@ -4,7 +4,7 @@ import Landing from "./Landing/Landing";
 import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
 import Demo from "./Demo/Demo";
-import Tracking from './Tracking/Tracking'
+import Tracking from "./Tracking/Tracking";
 import Articles from "./Articles/Articles";
 import Article from "./Article/Article";
 import { Route, Link, Switch, Redirect } from "react-router-dom";
@@ -16,34 +16,30 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: {
-        user_id: null,
-        username: null,
-        name: null
-      },
+      user_id: null,
+      username: null,
+      name: null,
     };
     this.logout = this.logout.bind(this);
   }
   static contextType = UserContext;
   logout() {
-    console.log("logout ran");
     this.setState({ user: {} });
   }
   login(userid) {
-    this.setState({ user: { user_id: userid } });
+    this.setState({ user_id: userid });
   }
   setUsername(username) {
-    this.setState({ user: { username: username } });
+    this.setState({ username: username });
   }
   setUserName(name) {
-    this.setState({ user: {name: name}})
+    this.setState({ name: name });
   }
 
   submitLogin = (e) => {
     e.preventDefault();
     const un = e.target.username.value;
     const pw = e.target.password.value;
-    console.log("un", un, "pw", pw);
     const userToken = btoa(`${un}:${pw}`);
     fetch(`${API_URL}/api/user`, {
       method: "POST",
@@ -64,12 +60,12 @@ class App extends Component {
         window.localStorage.setItem(JWT_TOKEN, data.data.jwtToken);
         this.login(data.data.user.id);
         this.setUsername(data.data.user.username);
-        this.setUserName(data.data.user.name)
+        this.setUserName(data.data.user.name);
       });
   };
   render() {
     const renderLoginOrLogout =
-      this.state.user.user_id !== null ? (
+      this.state.user_id !== null ? (
         <div className="link">
           <a href="Logout">logout</a>
         </div>
@@ -80,7 +76,9 @@ class App extends Component {
         </div>
       );
     const value = {
-      user: this.state.user,
+      user_id: this.state.user_id,
+      username: this.state.username,
+      name: this.state.name,
       logoutUser: this.logout,
     };
     return (
@@ -98,7 +96,7 @@ class App extends Component {
             <Route path="/Landing" render={() => <Landing />} />
             <Route path="/Signup" render={() => <Signup />} />
             <UserContext.Consumer>
-              {({ user, logoutUser }) => {
+              {({ user_id, username, name, logoutUser }) => {
                 return (
                   <>
                     <Route
@@ -106,24 +104,23 @@ class App extends Component {
                       render={() => (
                         <Login
                           submitLogin={this.submitLogin}
-                          user={user}
+                          user_id={user_id}
+                          username={username}
+                          name={name}
                           logoutUser={logoutUser}
                         />
                       )}
                     />
-                    <Route path="/Demo" render={() => <Demo user={user} />} />
+                    <Route
+                      path="/Demo"
+                      render={() => <Demo user_id={user_id} />}
+                    />
                     <Route
                       path="/Tracking"
-                      render={() => <Tracking user={user} />}
+                      render={() => <Tracking user_id={user_id} />}
                     />
-                    <Route
-                      path="/Articles"
-                      render={() => <Articles user={user} />}
-                    />
-                    <Route
-                      path="/Article"
-                      render={() => <Article user={user} />}
-                    />
+                    <Route path="/Articles" render={() => <Articles />} />
+                    <Route path="/Article" render={() => <Article />} />
                   </>
                 );
               }}

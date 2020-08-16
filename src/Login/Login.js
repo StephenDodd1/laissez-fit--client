@@ -8,14 +8,15 @@ export default class Login extends Component {
   }
   static contextType = UserContext;
   render() {
-    const renderDemoOrUser = this.context.user.name ? (
+    const renderDemoOrUser = this.context.name ? (
       <p>
-        Hey {this.context.user.name},&ensp;
-        <Link to="/Tracking">go to your logs</Link>
+        Hey {this.context.name},&ensp;
+        <Link to="/Demo">go to your logs</Link>
       </p>
     ) : (
       <Link to="/Demo">Demo</Link>
     );
+    console.log(this.context.user_id)
     return (
       <div className="centered-form">
         <form className="credentials-box" onSubmit={this.props.submitLogin}>
