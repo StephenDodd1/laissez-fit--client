@@ -120,38 +120,15 @@ export default class Demo extends Component {
         .then((res) => res.json())
         .then((data) => this.setState({ tracking: data[0] }));
     };
-    updateTracking = (e) => {
-      e.preventDefault();
-      console.log(e.target.slp.value);
-    };
-    
-    getDay = () => {
-      const a = this.state;
-      const m =
-        a.month === 10 || a.month === 11 || a.month === 12
-          ? a.month
-          : "0" + a.month;
-      const URL = `${API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`;
-      fetch(URL, {
-        method: "GET",
-        mode: "cors",
-        credentials: "same-origin",
-        headers: {
-          "Content-type": "application/json",
-        },
-      })
-        .then((res) => res.json())
-        .then((data) => this.setState({ tracking: data[0] }));
-    };
 
   render() {
     const t = this.state.tracking;
     console.log(t)
     const renderTracking = this.state.tracking !== null 
     && this.state.tracking !== undefined ? 
-    <Tracking tracking={this.state.tracking} /> : <Track />
+    <Tracking tracking={this.state.tracking} /> : <Track day={this.state.day} month={this.state.month} year={this.state.year}  />
     return(
-      <div>
+      <div id='date-outer-container'>
         <Link to="Articles">Articles</Link>
         <div id="date-container">
           <i

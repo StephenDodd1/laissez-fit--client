@@ -4,7 +4,7 @@
 }
 
 
-.App-header, .link-box, #tracking-container{
+.App-header, .link-box, #date-outer-container, #tracking-container{
   display:flex;
   flex-direction: column;
   align-items: center;
@@ -107,9 +107,18 @@ button {
 @media screen and (min-width: 700px){
   #tracking-metrics {
     display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto
+  }
+  #tracking-container {
+    display: flex;
+    flex-direction: column;
+  }
+  #tracking-column-container {
+    display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width: 90%
   }
   .fitness-container {
     width: 30%;
