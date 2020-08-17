@@ -1,25 +1,42 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { API_URL } from "../config";
 
 export default class Comments extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      comments: [],
+    };
+  }
+  componentDidMount() {
+    console.log(this.props.article_id);
+    URL = `${API_URL}/api/${this.props.article_id}/comments`;
+    fetch(URL, {
+      method: "GET",
+      mode: "cors",
+      headers: {
+        "Content-type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => this.setState({
+        comments: data
+      }));
+  }
+
   render() {
-    return(
+    return (
       <div>
-        <div>
-          <h3>Comments</h3>
-          <h4>user 1</h4>
-          <p>
-            This is a comment about the post above. I cannot read it because it
-            is in Chinese.
-          </p>
-          <h4>user 4</h4>
-          <p>
-            Actually it is in fake latin. No one can read it. Except for maybe
-            Latinaughts.
-          </p>
-          <h4>user 2</h4>
-          <p>LOL! Latinaughts....</p>
-        </div>
+        <h3>Comments</h3>
+        {this.state.comments.map((comment, i) => {
+          return (
+            <div key={i}>
+              <h4>{comment.username}</h4>
+              <p>{comment.comment}</p>
+            </div>
+          );
+        })}
       </div>
-    )
+    );
   }
 }

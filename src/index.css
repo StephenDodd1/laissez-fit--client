@@ -104,6 +104,11 @@ button {
   padding: none;
   color: black;
 }
+.articles-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 @media screen and (min-width: 700px){
   #tracking-metrics {
     display: flex;

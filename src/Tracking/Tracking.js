@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { API_URL } from "../config";
 import { UserContext } from "../context";
 export default class Tracking extends Component {
@@ -36,8 +35,8 @@ export default class Tracking extends Component {
     let ins = parseInt(t.ins.value);
     console.log(slp)
     const metrics = {
-      slp, men, act, act, stp, dia,
-      cal, fat,car, fib, pro, rhr,
+      slp, men, act, stp, dia,
+      cal, fat, car, fib, pro, rhr,
       mhr, bps, bpd, bls, lbs, ins
     }
     const a = this.props;

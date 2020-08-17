@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../context";
 
 export default class Login extends Component {
-  constructor(props) {
-    super(props);
-  }
+
   static contextType = UserContext;
   render() {
     const renderDemoOrUser = this.context.name ? (

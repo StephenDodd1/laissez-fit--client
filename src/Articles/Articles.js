@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import Article from '../Article/Article';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { JWT_TOKEN, API_URL } from '../config'
 
 export default class Articles extends Component {
@@ -27,23 +26,25 @@ export default class Articles extends Component {
     }))
   }
   render() {
+    
     const fitnessArticles = this.state.articles.filter(topic => topic.topic === "Fitness" )
-    const fitnessArticlesList = fitnessArticles.map((article, i) => 
-      <li><Link to={`/Article/${article.id}`}>{article.title}</Link>
-      <Route path={`/Article/${article.id}`} render={() => <Article />}/></li>
-    )
+    const fitnessArticlesList = fitnessArticles.map((article, i) => {
+      console.log(article.content)
+      return <li key={i}><Link to={`/Article/${article.articleId}`} >{article.title}</Link></li>
+    })
     const nutritionArticles = this.state.articles.filter(topic => topic.topic === "Nutrition" )
     const nutritionArticlesList = nutritionArticles.map((article, i) => 
-      <li><Link to={`/Article/${article.id}`}>{article.title}</Link>
-      <Route path={`/Article/${article.id}`} render={() => <Article />}/></li>
+      <li key={i}><Link to={`/Article/${article.articleId}`}>{article.title}</Link></li>
     )
     const metricsArticles = this.state.articles.filter(topic => topic.topic === "Metrics" )
     const metricsArticlesList = metricsArticles.map((article, i) => 
-      <li><Link to={`/Article/${article.id}`}>{article.title}</Link>
-      <Route path={`/Article/${article.id}`} render={() => <Article />}/></li>
+      <li key={i}><Link to={`/Article/${article.articleId}`}>{article.title}</Link></li>
     )
     return (
       <div id="articles-container">
+        <div className='articles-link'>
+          <Link to="Demo">Tracking</Link>
+        </div>
         <div>
           <h3>Fitness</h3>
           <ul>

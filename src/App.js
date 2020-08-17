@@ -8,7 +8,6 @@ import Tracking from "./Tracking/Tracking";
 import Articles from "./Articles/Articles";
 import Article from "./Article/Article";
 import { Route, Link, Switch, Redirect } from "react-router-dom";
-import { render } from "@testing-library/react";
 import { JWT_TOKEN, API_URL } from "./config.js";
 import { UserContext } from "./context";
 

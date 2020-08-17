@@ -3,9 +3,7 @@ import { API_URL } from '../config'
 import { UserContext } from "../context";
 
 export default class Track extends Component {
-  constructor(props) {
-    super(props);
-  }
+  
   static contextType = UserContext;
   submitTracking = (e) => {
     e.preventDefault()
@@ -29,7 +27,7 @@ export default class Track extends Component {
     let ins = parseInt(t.ins.value);
     console.log(slp)
     const metrics = {
-      slp, men, act, act, stp, dia,
+      slp, men, act, stp, dia,
       cal, fat,car, fib, pro, rhr,
       mhr, bps, bpd, bls, lbs, ins
     }
