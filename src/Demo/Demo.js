@@ -50,8 +50,9 @@ export default class Demo extends Component {
       } else {
         this.setState({
           day: --a.day,
-        });
+        })
       }
+      this.getDay()
     };
     forwardOneDay = () => {
       const a = this.state;
@@ -81,7 +82,8 @@ export default class Demo extends Component {
       } else {
         this.setState({ day: ++a.day });
       }
-    };
+      this.getDay()
+    }
   
     componentDidMount() {
       const a = this.state;
@@ -126,10 +128,10 @@ export default class Demo extends Component {
     console.log(t)
     const renderTracking = this.state.tracking !== null 
     && this.state.tracking !== undefined ? 
-    <Tracking tracking={this.state.tracking} /> : <Track day={this.state.day} month={this.state.month} year={this.state.year}  />
+    <Tracking tracking={this.state.tracking} day={this.state.day} month={this.state.month} year={this.state.year} /> : <Track day={this.state.day} month={this.state.month} year={this.state.year}  />
     return(
       <div id='date-outer-container'>
-        <Link to="Articles">Articles</Link>
+        <Link className='articles-link' to="Articles">Articles</Link>
         <div id="date-container">
           <i
             className="fa fa-angle-double-left"

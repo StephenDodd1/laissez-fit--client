@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Comments from "../Comments/Comments";
 import { API_URL, JWT_TOKEN } from "../config";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 export default class Article extends Component {
   constructor(props) {
     super(props);
@@ -33,12 +33,14 @@ export default class Article extends Component {
 
   render() {
     return this.state.article.map((article, i) => (
-      <div key={i}>
-        <div className='articles-link'>
+      <div className="article-box" key={i}>
+        <div className="articles-link">
           <Link to="../Articles">Articles</Link>
         </div>
-        <h2>{article.title}</h2>
-        <p>{article.content}</p>
+        <div className="article-container">
+          <h2 className="article-title">{article.title}</h2>
+          <p className="article-content">{article.content}</p>
+        </div>
         <Comments article_id={window.location.pathname.split("/")[2]} />
       </div>
     ));

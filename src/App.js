@@ -7,6 +7,7 @@ import Demo from "./Demo/Demo";
 import Tracking from "./Tracking/Tracking";
 import Articles from "./Articles/Articles";
 import Article from "./Article/Article";
+import Comment from "./Comment/Comment"
 import { Route, Link, Switch, Redirect } from "react-router-dom";
 import { JWT_TOKEN, API_URL } from "./config.js";
 import { UserContext } from "./context";
@@ -120,6 +121,7 @@ class App extends Component {
                     />
                     <Route path="/Articles" render={() => <Articles />} />
                     <Route path="/Article" render={() => <Article />} />
+                    <Route path="/Comment" render={() => <Comment user_id={user_id}/>} />
                   </>
                 );
               }}

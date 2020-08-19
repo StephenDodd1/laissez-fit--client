@@ -15,6 +15,7 @@ export default class Tracking extends Component {
 
   updateTracking = (e) => {
     e.preventDefault();
+    const tracking_id = this.state.tracking.id
     const t = e.target;
     let slp = parseInt(t.slp.value);
     let men = t.men.value;
@@ -35,7 +36,7 @@ export default class Tracking extends Component {
     let ins = parseInt(t.ins.value);
     console.log(slp)
     const metrics = {
-      slp, men, act, stp, dia,
+      tracking_id, slp, men, act, stp, dia,
       cal, fat, car, fib, pro, rhr,
       mhr, bps, bpd, bls, lbs, ins
     }
@@ -47,7 +48,7 @@ export default class Tracking extends Component {
     const URL = `${API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`
     console.log(URL)
     fetch(URL, {
-      method: "POST",
+      method: "PATCH",
       mode: "cors",
       credentials: "same-origin",
       headers: {
@@ -62,8 +63,9 @@ export default class Tracking extends Component {
     this.setState({ tracking: this.props.tracking });
   }
   render() {
+
     return (
-      <div id="tracking-container">
+      <div id="tracking-container" >
         <form onSubmit={this.updateTracking} id="tracking-metrics">
           <div id="tracking-submit-container">
             <button type="submit" id="tracking-submit">

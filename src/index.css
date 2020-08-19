@@ -2,14 +2,52 @@
   font-family: "Lucida Console", Monaco, monospace;
   background: moccasin;
 }
-
+.App {
+  background: black;
+  margin: -20px;
+}
+body{ 
+  background-color: black;
+  margin: -10px -10px -10px;
+}
+header {
+  background-image: url("frogs-1274769_1280.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  margin: -40px;
+  margin-bottom: 3px;
+}
+.link, .links{
+  margin-top: 40px;
+  background: none;
+  color: white;
+  font-weight: bold;
+}
+.link>a, .links>a{
+  background: none;
+  color: white
+}
+.App-logo {
+  border-radius: 50%;
+  opacity: 84%;
+}
 
 .App-header, .link-box, #date-outer-container, #tracking-container{
   display:flex;
   flex-direction: column;
   align-items: center;
 }
+.outer-box{
+  margin-top: -20px;
+}
 
+h1 {
+  margin-top:0px;
+  background: none;
+  font-weight: bolder;
+  color: white;
+}
 .links {
   display: flex;
   flex-direction: row;
@@ -17,7 +55,9 @@
   width: 150px;
   font-size: 18px;
 }
-
+.articles-link {
+  font-size: 22px;
+}
 .demo-link {
   display: flex;
   flex-direction: row;
@@ -50,8 +90,11 @@ label {
 .metrics-labels {
   text-align: right;
 }
+.links>a:visited, .link>a:visited{
+  color: white;
+}
 a:visited {
-  color: rgba(2, 66, 39, 0.694);
+  color: rgba(2, 66, 39, 0.694)
 }
 textarea {
   height: 112px;
@@ -87,6 +130,17 @@ button {
 #fa-search {
   font-size: 170%
 }
+#fa-plus {
+  font-size: 110%;
+  background: none;
+  color: none;
+  border: none;
+  text-decoration: none;
+  height: 40px;
+  width: 40px;
+  color: black;
+}
+
 #date-container {
   display: flex;
   flex-direction: row;
@@ -108,8 +162,73 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding-top: 30px;
+}
+#comments-container, .article-box, #articles-container, #date-outer-container, #tracking-container {
+  margin-left: 10%;
+}
+#comments-container {
+  margin-top: 50px;
+}
+.article-box, #articles-container, #date-outer-container {
+  margin-left: 7%;
+  margin-right: 7%;
+  padding-bottom: 50px
+}
+#article-column-container {
+  padding-left: 50px;
+}
+.article-box, .article-title, .article-content {
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 0px;
+}
+#comment-container {
+  margin: 30px;
+  padding: 60px;
+}
+#comment-label {
+  font-size: 17px;
+  width: 250px;
+}
+#comment-text {
+  width: 80%
+}
+.comment-box{
+  margin-bottom: 75px;
+}
+.username {
+  color: rgb(2, 138, 2, 0.8);
+  size: 20px;
+  font-weight: bold
+}
+#trash-button {
+  background: none;
+  color: none;
+  border: none;
+  height: 40px;
+  width: 40px;
+  color: black;
+  font-size: 150%
+}
+.article-container, .article-title, .article-content {
+  margin-top: 25px;
+  background: white;
+  padding-top:.1px;
+  border-radius: 30px;
+}
+.article-content {
+  padding-bottom: 30px
+}
+#landing-box {
+  padding: 20px;
 }
 @media screen and (min-width: 700px){
+  header {
+    background-size: 100% 100%;
+    margin: -10px;
+    margin-bottom: 3px;
+  }
   #tracking-metrics {
     display: flex;
     flex-direction: column;
@@ -142,5 +261,35 @@ button {
   #diary-label {
     padding-top: 35px;
   }
+  #article-column-container {
+    padding-left: 150px;
+  }
+}
+@media screen and (min-width: 1000px){
+  header{ 
+    background-size: 100% 105%;
+    background-color: black
+  }
+  #article-column-container {
+    padding-left: 200px;
+  }
 }
 
+@media screen and (min-width: 1300px){
+  header{ 
+    background-size: 80% 100%;
+  }
+  .articles-link { 
+    border-radius: 30px;
+  }
+  #comments-container, .article-box, #articles-container, #date-outer-container  {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+  #article-column-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-left: 0px;
+  }
+}

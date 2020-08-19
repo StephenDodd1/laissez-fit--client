@@ -25,10 +25,9 @@ export default class Track extends Component {
     let bls = parseInt(t.bls.value);
     let lbs = parseInt(t.lbs.value);
     let ins = parseInt(t.ins.value);
-    console.log(slp)
     const metrics = {
       slp, men, act, stp, dia,
-      cal, fat,car, fib, pro, rhr,
+      cal, fat, car, fib, pro, rhr,
       mhr, bps, bpd, bls, lbs, ins
     }
     const a = this.props;

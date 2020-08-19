@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from "react-router-dom"
 import { API_URL } from "../config";
 
 export default class Comments extends Component {
@@ -23,16 +24,35 @@ export default class Comments extends Component {
         comments: data
       }));
   }
-
+  deleteComment = (e) => {
+    e.preventDefault();
+    const URL = `${API_URL}/api/comment/${e.target.value}`
+    fetch(URL, {
+      method: "DELETE",
+      mode: "cors",
+      credentials: "same-origin",
+      headers: {
+        "Content-type": "application/json"
+      }
+    }).then(res => {
+      if(!res.ok) {
+        throw Error = {error: {message: 'comment not deleted'}}
+      }
+      res.json()
+    })
+    .then(data => console.log(data))
+  }
   render() {
     return (
-      <div>
-        <h3>Comments</h3>
+      <div id='comments-container'>
+        <h3>Comments <Link to={`/Comment/${window.location.pathname.split('/')[2]}`} id="fa-plus" className="fa fa-plus"></Link></h3>
         {this.state.comments.map((comment, i) => {
           return (
-            <div key={i}>
-              <h4>{comment.username}</h4>
+            <div className='comment-box' key={i}>
+              <h4>Posted by: <span className='username'>{comment.username}</span></h4>
               <p>{comment.comment}</p>
+              {console.log(comment.comment_id)}
+              <button id='trash-button' onClick={this.deleteComment} value={comment.comment_id} className="fa fa-trash"></button>
             </div>
           );
         })}
