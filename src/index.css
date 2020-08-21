@@ -217,7 +217,7 @@ button {
   background: none;
   border-radius: 30px;
 }
-.article-container, .article-container p {
+.article-container p {
 background: rgb(2, 138, 2, 0.6);
 }
 .article-content {
