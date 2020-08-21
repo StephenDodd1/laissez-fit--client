@@ -13,7 +13,7 @@ export default class Track extends Component {
     let act = t.act.value;
     let stp = parseInt(t.stp.value);
     let dia = t.dia.value;
-    let cal = parseInt(t.dia.vlaue);
+    let cal = parseInt(t.cal.vlaue);
     let fat = parseInt(t.fat.value);
     let car = parseInt(t.car.value);
     let fib = parseInt(t.fib.value);
