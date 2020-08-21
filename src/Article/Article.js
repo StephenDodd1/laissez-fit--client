@@ -39,7 +39,7 @@ export default class Article extends Component {
         </div>
         <div className="article-container">
           <h2 className="article-title">{article.title}</h2>
-          <div className="article-content">{article.content}</div>
+          <div className="article-content" dangerouslySetInnerHTML={{ __html: article.content }} />
         </div>
         <Comments article_id={window.location.pathname.split("/")[2]} />
       </div>
