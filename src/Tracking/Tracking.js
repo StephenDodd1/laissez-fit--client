@@ -22,7 +22,7 @@ export default class Tracking extends Component {
     let act = t.act.value;
     let stp = parseInt(t.stp.value);
     let dia = t.dia.value;
-    let cal = parseInt(t.dia.vlaue);
+    let cal = parseInt(t.cal.vlaue);
     let fat = parseInt(t.fat.value);
     let car = parseInt(t.car.value);
     let fib = parseInt(t.fib.value);
@@ -40,6 +40,7 @@ export default class Tracking extends Component {
       cal, fat, car, fib, pro, rhr,
       mhr, bps, bpd, bls, lbs, ins
     }
+
     const a = this.props;
       const m =
         a.month === 10 || a.month === 11 || a.month === 12
