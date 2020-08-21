@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Tracking from '../Tracking/Tracking'
 import Track from '../Track/Track'
 import { Link } from "react-router-dom";
-import { API_URL } from "../config";
+import config from "../config";
 import { UserContext } from "../context";
 
 export default class Demo extends Component {
@@ -91,7 +91,7 @@ export default class Demo extends Component {
         a.month === 10 || a.month === 11 || a.month === 12
           ? a.month
           : "0" + a.month;
-      const URL = `${API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`;
+      const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`;
       fetch(URL, {
         method: "GET",
         mode: "cors",
@@ -110,7 +110,7 @@ export default class Demo extends Component {
         a.month === 10 || a.month === 11 || a.month === 12
           ? a.month
           : "0" + a.month;
-      const URL = `${API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`;
+      const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`;
       fetch(URL, {
         method: "GET",
         mode: "cors",

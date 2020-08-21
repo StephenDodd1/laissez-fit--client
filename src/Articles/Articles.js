@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { JWT_TOKEN, API_URL } from "../config";
+import config from "../config";
 
 export default class Articles extends Component {
   constructor(props) {
@@ -10,14 +10,14 @@ export default class Articles extends Component {
     };
   }
   componentDidMount() {
-    const URL = `${API_URL}/api/articles`;
+    const URL = `${config.API_URL}/api/articles`;
     fetch(URL, {
       method: "GET",
       mode: "cors",
       credentials: "same-origin",
       headers: {
-        "Content-type": "application/json",
-        Authorization: JWT_TOKEN,
+        "content-type": "application/json",
+        Authorization: config.JWT_TOKEN,
       },
     })
       .then((res) => res.json())

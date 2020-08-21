@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { API_URL, API_TOKEN } from '../config';
+import config from '../config';
 import { UserContext } from '../context'
 
 export default class Comment extends Component {
   static contextType = UserContext;
   submitComment = (e) => {
     e.preventDefault();
-    const URL = `${API_URL}/api/${window.location.pathname.split('/')[2]}/comment`;
+    const URL = `${config.API_URL}/api/${window.location.pathname.split('/')[2]}/comment`;
     const comment = e.target.content.value;
     const user_id = this.context.user_id;
     const content = {comment, user_id}
@@ -16,7 +16,7 @@ export default class Comment extends Component {
       credentials: "same-origin",
       headers: {
         "Content-type": "application/json",
-        Authorization: {API_TOKEN}
+        Authorization: config.JWT_TOKEN
       },
       body: JSON.stringify(content)
     })

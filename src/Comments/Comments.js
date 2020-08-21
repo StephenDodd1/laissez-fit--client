@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {Link} from "react-router-dom"
-import { API_URL } from "../config";
+import config from "../config";
 
 export default class Comments extends Component {
   constructor(props) {
@@ -11,7 +11,7 @@ export default class Comments extends Component {
   }
   componentDidMount() {
     console.log(this.props.article_id);
-    URL = `${API_URL}/api/${this.props.article_id}/comments`;
+    const URL = `${config.API_URL}/api/${this.props.article_id}/comments`;
     fetch(URL, {
       method: "GET",
       mode: "cors",
@@ -26,7 +26,7 @@ export default class Comments extends Component {
   }
   deleteComment = (e) => {
     e.preventDefault();
-    const URL = `${API_URL}/api/comment/${e.target.value}`
+    const URL = `${config.API_URL}/api/comment/${e.target.value}`
     fetch(URL, {
       method: "DELETE",
       mode: "cors",
@@ -36,7 +36,7 @@ export default class Comments extends Component {
       }
     }).then(res => {
       if(!res.ok) {
-        throw Error = {error: {message: 'comment not deleted'}}
+        return {error: {message: 'comment not deleted'}}
       }
       res.json()
     })

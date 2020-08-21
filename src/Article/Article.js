@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Comments from "../Comments/Comments";
-import { API_URL, JWT_TOKEN } from "../config";
+import config from "../config";
 import { Link } from "react-router-dom";
 export default class Article extends Component {
   constructor(props) {
@@ -11,7 +11,7 @@ export default class Article extends Component {
   }
 
   componentDidMount() {
-    const URL = `${API_URL}/api/article/${
+    const URL = `${config.API_URL}/api/article/${
       window.location.pathname.split("/")[2]
     }`;
     fetch(URL, {
@@ -20,7 +20,7 @@ export default class Article extends Component {
       credentials: "same-origin",
       headers: {
         "Content-type": "application/json",
-        Authorization: JWT_TOKEN,
+        Authorization: config.JWT_TOKEN,
       },
     })
       .then((res) => res.json())

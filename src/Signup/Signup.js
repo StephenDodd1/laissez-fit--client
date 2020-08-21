@@ -1,33 +1,73 @@
-import React from "react";
-import {Link} from 'react-router-dom';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import config from '../config'
 
-export default function Signup() {
-  return (
-    <div className='centered-form'>
-      <form className='credentials-box'>
+export default class Signup extends Component {
+  signupUser = (e) => {
+    e.preventDefault();
+    console.log("signup user ran")
+    const email = e.target.email.value;
+    const username = e.target.username.value;
+    const password = e.target.password.value;
+    const confirm = e.target.confirm.value;
+    const name = e.target.name.value;
+    const dob = e.target.dob.value;
+    if (password !== confirm) {
+      return alert("Passwords do not match")
+      
+    } 
+    const user = {
+      email,
+      username,
+      password,
+      name,
+      dob,
+    };
+    const URL = `${config.API_URL}/api/users`
+    fetch(URL, {
+      method: "POST",
+      mode: "cors",
+      credentials: "same-origin",
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify(user)
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+  };
+  render() {
+    return (
+      <div className="centered-form">
+        <form onSubmit={this.signupUser} className="credentials-box">
         <div className="input-label">
-          <label htmlFor="username">Username</label>
-          <input id="username" />
-        </div>
-        <div className="input-label">
-          <label htmlFor="password">Password</label>
-          <input id="password" type='password' />
-        </div>
-        <div className="input-label">
-          <label htmlFor="confirm-password">Confirm Password</label>
-          <input id="confirm password" type='password' />
-        </div>
-        <div className="input-label">
-          <label htmlFor="Name">Name</label>
-          <input id="name" />
-        </div>
-        <div className="input-label">
-          <label htmlFor="dob">Date of Birth</label>
-          <input id="dob" placeholder='ex: 02/20/2000' />
-        </div>
-        <button>Signup</button>
-        <Link to='/Demo'>Demo</Link>
-      </form>
-    </div>
-  );
+            <label htmlFor="email">Email</label>
+            <input id="email" name="email" />
+          </div>
+          <div className="input-label">
+            <label htmlFor="username">Username</label>
+            <input id="username" name="username" />
+          </div>
+          <div className="input-label">
+            <label htmlFor="password">Password</label>
+            <input id="password" type="password" name="password" />
+          </div>
+          <div className="input-label">
+            <label htmlFor="confirm-password">Confirm Password</label>
+            <input id="confirm password" type="password" name="confirm" />
+          </div>
+          <div className="input-label">
+            <label htmlFor="Name">Name</label>
+            <input id="name" name="name" />
+          </div>
+          <div className="input-label">
+            <label htmlFor="dob">Date of Birth</label>
+            <input id="dob" placeholder="ex: 02/20/2000" name="dob" />
+          </div>
+          <button>Signup</button>
+          <Link to="/Demo">Demo</Link>
+        </form>
+      </div>
+    );
+  }
 }

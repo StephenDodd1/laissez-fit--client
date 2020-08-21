@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { API_URL } from "../config";
+import config from "../config";
 import { UserContext } from "../context";
 export default class Tracking extends Component {
   constructor(props) {
@@ -45,7 +45,7 @@ export default class Tracking extends Component {
         a.month === 10 || a.month === 11 || a.month === 12
           ? a.month
           : "0" + a.month;
-    const URL = `${API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`
+    const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`
     console.log(URL)
     fetch(URL, {
       method: "PATCH",

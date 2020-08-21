@@ -9,7 +9,7 @@ import Articles from "./Articles/Articles";
 import Article from "./Article/Article";
 import Comment from "./Comment/Comment"
 import { Route, Link, Switch, Redirect } from "react-router-dom";
-import { JWT_TOKEN, API_URL } from "./config.js";
+import config from "./config.js";
 import { UserContext } from "./context";
 
 class App extends Component {
@@ -41,23 +41,24 @@ class App extends Component {
     const un = e.target.username.value;
     const pw = e.target.password.value;
     const userToken = btoa(`${un}:${pw}`);
-    fetch(`${API_URL}/api/user`, {
+    fetch(`${config.API_URL}/api/user`, {
       method: "POST",
       mode: "cors",
       credentials: "same-origin",
       headers: {
-        "Content-Type": "application/json",
+        "Content-type": "application/json",
         Authorization: `basic ${userToken}`,
-      },
+      }
     })
       .then((res) => {
         if (!res.ok) {
-          throw new Error({ error: { message: "login failed" } });
+          console.log('res from submitLogin',res)
+          throw new Error({ error: { message: "login failed" }});
         }
         return res.json();
       })
       .then((data) => {
-        window.localStorage.setItem(JWT_TOKEN, data.data.jwtToken);
+        window.localStorage.setItem(config.JWT_TOKEN, data.data.jwtToken);
         this.login(data.data.user.id);
         this.setUsername(data.data.user.username);
         this.setUserName(data.data.user.name);

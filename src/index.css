@@ -213,9 +213,12 @@ button {
 }
 .article-container, .article-title, .article-content {
   margin-top: 25px;
-  background: white;
   padding-top:.1px;
+  background: none;
   border-radius: 30px;
+}
+.article-container {
+background: rgb(2, 138, 2, 0.6);
 }
 .article-content {
   padding-bottom: 30px
