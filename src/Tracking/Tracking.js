@@ -34,7 +34,6 @@ export default class Tracking extends Component {
     let bls = parseInt(t.bls.value);
     let lbs = parseInt(t.lbs.value);
     let ins = parseInt(t.ins.value);
-    console.log(slp)
     const metrics = {
       tracking_id, slp, men, act, stp, dia,
       cal, fat, car, fib, pro, rhr,
