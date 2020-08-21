@@ -39,7 +39,7 @@ export default class Article extends Component {
         </div>
         <div className="article-container">
           <h2 className="article-title">{article.title}</h2>
-          <p className="article-content">{article.content}</p>
+          <p className="article-content">{String.raw(article.content)}</p>
         </div>
         <Comments article_id={window.location.pathname.split("/")[2]} />
       </div>
