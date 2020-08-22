@@ -25,8 +25,10 @@ class Track extends Component {
     .then(res => {
       if(!res.ok) {
         updateMethod = 'POST'
+        console.log('POST Ran')
       }
       else {
+        console.log('PATCH Ran')
         updateMethod = 'PATCH'
       }
     })
