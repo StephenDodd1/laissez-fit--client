@@ -56,7 +56,7 @@ class Track extends Component {
     const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`
     console.log(URL)
     fetch(URL, {
-      method: updateMethod,
+      method: `${updateMethod}`,
       mode: "cors",
       credentials: "same-origin",
       headers: {
