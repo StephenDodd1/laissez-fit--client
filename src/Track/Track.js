@@ -8,6 +8,28 @@ class Track extends Component {
   static contextType = UserContext;
   submitTracking = (e) => {
     e.preventDefault()
+    let updateMethod;
+    const a = this.props;
+    const m =
+      a.month === 10 || a.month === 11 || a.month === 12
+        ? a.month
+        : "0" + a.month;
+    fetch(`${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`, {
+      method: "GET",
+      mode: "cors",
+      credentials: "same-origin",
+      headers: {
+        "Content-type": "application/json",
+      }
+    })
+    .then(res => {
+      if(!res.ok) {
+        updateMethod = 'PATCH'
+      }
+      else {
+        updateMethod = 'POST'
+      }
+    })
     const t = e.target;
     let slp = parseInt(t.slp.value);
     let men = t.men.value;
@@ -31,11 +53,6 @@ class Track extends Component {
       cal, fat, car, fib, pro, rhr,
       mhr, bps, bpd, bls, lbs, ins
     }
-    const a = this.props;
-      const m =
-        a.month === 10 || a.month === 11 || a.month === 12
-          ? a.month
-          : "0" + a.month;
     const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`
     console.log(URL)
     fetch(URL, {
