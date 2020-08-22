@@ -11,7 +11,7 @@ class Track extends Component {
     }
   }
   static contextType = UserContext;
-  checkTracking = () => {
+    checkTracking = () => new Promise((resolve, reject) => {
     const a = this.props;
     const m =
       a.month === 10 || a.month === 11 || a.month === 12
@@ -28,18 +28,18 @@ class Track extends Component {
     .then(res => {
       if(!res.ok) {
         console.log(res)
-        this.setState({updateMethod: 'POST'})
+        reject(() => this.setState({updateMethod: 'POST'}))
         setTimeout(() => {}, 1000)
         console.log('POST Ran as ', this.state.updateMethod)
         console.log(`method: ${this.state.updateMethod}`)
       }
       else {
-        this.setState({updateMethod: 'PATCH'})
+        resolve(() => this.setState({updateMethod: 'PATCH'}))
         setTimeout(() => {}, 1000)
         console.log('PATCH Ran as ', this.state.updateMethod)
       }
     })
-  }
+  })
   submitTracking = (e) => {
     e.preventDefault()
     this.checkTracking()
