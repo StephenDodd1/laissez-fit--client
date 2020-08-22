@@ -121,14 +121,14 @@ export default class Demo extends Component {
         "Content-type": "application/json",
       },
     })
-      .then((res) => {
+      .then((res) => res.json())
+      .then((data) => {
         if(res.status === 404) {
           console.log(res.status)
           return this.setState({ tracking: undefined })
         }
-        return res.json()
-      })
-      .then((data) => this.setState({ tracking: data[0] }));
+        else return this.setState({ tracking: data[0] })
+        });
   };
 
   render() {
