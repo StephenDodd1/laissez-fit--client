@@ -73,7 +73,7 @@ class Track extends Component {
       body: JSON.stringify(metrics)
     })
     .then(res => res.json())
-    .then(data => this.props.history.push("/Demo") />)
+    .then(data => this.props.history.push("/Demo"))
   }
   render() {
     return (
