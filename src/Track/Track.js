@@ -45,7 +45,7 @@ class Track extends Component {
         setTimeout(() => {}, 1000);
         return console.log("timeout finished");
       })
-      .then(() => {
+      .then((e) => {
         const t = e.target;
         let slp = parseInt(t.slp.value);
         let men = t.men.value;
