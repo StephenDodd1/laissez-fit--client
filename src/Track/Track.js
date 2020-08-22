@@ -61,8 +61,8 @@ class Track extends Component {
       cal, fat, car, fib, pro, rhr,
       mhr, bps, bpd, bls, lbs, ins
     }
+    async()
     const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`
-    await this.state.updateMethod === 'POST' || this.state.updateMethod === 'PATCH'
     fetch(URL, {
       method: `${this.state.updateMethod}`,
       mode: "cors",
@@ -75,6 +75,8 @@ class Track extends Component {
     .then(res => res.json())
     .then(data => <Redirect to={`/Demo`} />)
   }
+  async = () => await this.state.updateMethod === 'POST' || this.state.updateMethod === 'PATCH'
+
   render() {
     return (
       <div id="tracking-container">
