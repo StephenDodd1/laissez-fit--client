@@ -11,8 +11,7 @@ class Track extends Component {
     }
   }
   static contextType = UserContext;
-  submitTracking = (e) => {
-    e.preventDefault()
+  checkTracking = () => {
     const a = this.props;
     const m =
       a.month === 10 || a.month === 11 || a.month === 12
@@ -38,6 +37,15 @@ class Track extends Component {
         console.log('PATCH Ran as ', this.state.updateMethod)
       }
     })
+  }
+  submitTracking = (e) => {
+    e.preventDefault()
+    this.checkTracking()
+    const a = this.props;
+    const m =
+      a.month === 10 || a.month === 11 || a.month === 12
+        ? a.month
+        : "0" + a.month;
     const t = e.target;
     let slp = parseInt(t.slp.value);
     let men = t.men.value;
