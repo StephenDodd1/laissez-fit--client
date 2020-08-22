@@ -122,7 +122,8 @@ export default class Demo extends Component {
       },
     })
       .then((res) => {
-        if(!res.ok) {
+        if(res.status === 404) {
+          console.log(res.status)
           return this.setState({ tracking: undefined })
         }
         return res.json()
