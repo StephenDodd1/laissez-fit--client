@@ -27,7 +27,7 @@ class Track extends Component {
       }
     })
     .then(res => {
-      if(res) {
+      if(res.status === 404) {
         console.log(res)
         this.setState({updateMethod: 'POST'})
         console.log('POST Ran as ', this.state.updateMethod)
@@ -37,7 +37,11 @@ class Track extends Component {
         this.setState({updateMethod: 'PATCH'})
         console.log('PATCH Ran as ', this.state.updateMethod)
       }
-    })
+    }).then(data => {
+      console.log('timeout began')
+      setTimeout(()=>{},1000)
+      return console.log('timeout finished')
+  })
     const t = e.target;
     let slp = parseInt(t.slp.value);
     let men = t.men.value;
