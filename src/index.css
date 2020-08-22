@@ -70,7 +70,10 @@ h1 {
   font-size: 22px;
   font-weight: lighter;
 }
-
+.vertical-elements {
+  display: flex;
+  flex-direction: column;
+}
 p {
   margin: 30px;
 }
