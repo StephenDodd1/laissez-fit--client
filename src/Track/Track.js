@@ -77,7 +77,7 @@ class Track extends Component {
   }
   awaitState = () => {
     while (this.state.updateMethod === '') {
-      return this.awaitState()
+      setTimeout(this.awaitState(), 1000 )
     }
   }
 
