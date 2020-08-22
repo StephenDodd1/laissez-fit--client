@@ -39,6 +39,7 @@ export default class Signup extends Component {
   render() {
     return (
       <div className="centered-form">
+        <h2>Submit</h2>
         <form onSubmit={this.signupUser} className="credentials-box">
         <div className="input-label">
             <label htmlFor="email">Email</label>

@@ -17,6 +17,7 @@ export default class Login extends Component {
     console.log(this.context.user_id)
     return (
       <div className="centered-form">
+        <h2>Login</h2>
         <form className="credentials-box" onSubmit={this.props.submitLogin}>
         {renderDemoOrUser}
           <div className="input-label">
