@@ -81,7 +81,7 @@ class Track extends Component {
       body: JSON.stringify(metrics)
     })
     .then(res => res.json())
-    .then(data => this.setState({updateMethod: ''}))
+    .then(data => console.log(this.state.updateMethod)/*setState({updateMethod: ''})*/)
   }
 
   render() {
