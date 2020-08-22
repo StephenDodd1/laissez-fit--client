@@ -30,12 +30,12 @@ class Track extends Component {
       if(res) {
         console.log(res)
         this.setState({updateMethod: 'POST'})
-        console.log('POST Ran as ', updateMethod)
-        console.log(`method: ${updateMethod}`)
+        console.log('POST Ran as ', this.state.updateMethod)
+        console.log(`method: ${this.state.updateMethod}`)
       }
       else {
         this.setState({updateMethod: 'PATCH'})
-        console.log('PATCH Ran as ', updateMethod)
+        console.log('PATCH Ran as ', this.state.updateMethod)
       }
     })
     const t = e.target;
