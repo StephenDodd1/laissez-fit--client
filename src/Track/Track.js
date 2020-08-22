@@ -23,13 +23,14 @@ class Track extends Component {
       }
     })
     .then(res => {
-      if(!res.ok) {
+      if(res) {
+        console.log(res)
         updateMethod = 'POST'
-        console.log('POST Ran')
+        console.log('POST Ran as ')
       }
       else {
-        console.log('PATCH Ran')
         updateMethod = 'PATCH'
+        console.log('PATCH Ran as ', updateMethod)
       }
     })
     const t = e.target;
