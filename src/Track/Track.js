@@ -11,7 +11,8 @@ class Track extends Component {
     }
   }
   static contextType = UserContext;
-    checkTracking = () => new Promise((resolve, reject) => {
+  submitTracking = (e) => {
+    e.preventDefault()
     const a = this.props;
     const m =
       a.month === 10 || a.month === 11 || a.month === 12
@@ -26,27 +27,17 @@ class Track extends Component {
       }
     })
     .then(res => {
-      if(!res.ok) {
+      if(res) {
         console.log(res)
-        resolve(() => this.setState({updateMethod: 'POST'}))
+        this.setState({updateMethod: 'POST'})
         console.log('POST Ran as ', this.state.updateMethod)
         console.log(`method: ${this.state.updateMethod}`)
       }
       else {
-        resolve(() => this.setState({updateMethod: 'PATCH'}))
-        setTimeout(() => {}, 1000)
+        this.setState({updateMethod: 'PATCH'})
         console.log('PATCH Ran as ', this.state.updateMethod)
       }
     })
-  })
-  submitTracking = (e) => {
-    e.preventDefault()
-    this.checkTracking()
-    const a = this.props;
-    const m =
-      a.month === 10 || a.month === 11 || a.month === 12
-        ? a.month
-        : "0" + a.month;
     const t = e.target;
     let slp = parseInt(t.slp.value);
     let men = t.men.value;
@@ -71,6 +62,7 @@ class Track extends Component {
       mhr, bps, bpd, bls, lbs, ins
     }
     const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`
+    console.log(URL)
     fetch(URL, {
       method: `${this.state.updateMethod}`,
       mode: "cors",
@@ -81,9 +73,8 @@ class Track extends Component {
       body: JSON.stringify(metrics)
     })
     .then(res => res.json())
-    .then(data => console.log(this.state.updateMethod)/*setState({updateMethod: ''})*/)
+    .then(data => this.props.history.push("/Demo") />)
   }
-
   render() {
     return (
       <div id="tracking-container">
