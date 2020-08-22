@@ -147,6 +147,7 @@ export default class Demo extends Component {
           day={this.state.day}
           month={this.state.month}
           year={this.state.year}
+          getDay ={this.getDay}
         />
       );
     return (

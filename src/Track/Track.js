@@ -18,30 +18,7 @@ class Track extends Component {
       a.month === 10 || a.month === 11 || a.month === 12
         ? a.month
         : "0" + a.month;
-    fetch(`${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`, {
-      method: "GET",
-      mode: "cors",
-      credentials: "same-origin",
-      headers: {
-        "Content-type": "application/json",
-      }
-    })
-    .then(res => {
-      if(res.status === 404) {
-        console.log(res)
-        this.setState({updateMethod: 'POST'})
-        console.log('POST Ran as ', this.state.updateMethod)
-        console.log(`method: ${this.state.updateMethod}`)
-      }
-      else {
-        this.setState({updateMethod: 'PATCH'})
-        console.log('PATCH Ran as ', this.state.updateMethod)
-      }
-    }).then(data => {
-      console.log('timeout began')
-      setTimeout(()=>{},1000)
-      return console.log('timeout finished')
-  })
+    this.props.getDay();
     const t = e.target;
     let slp = parseInt(t.slp.value);
     let men = t.men.value;
