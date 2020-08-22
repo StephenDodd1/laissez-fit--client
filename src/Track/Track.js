@@ -61,7 +61,6 @@ class Track extends Component {
       cal, fat, car, fib, pro, rhr,
       mhr, bps, bpd, bls, lbs, ins
     }
-    this.awaitState()
     const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`
     fetch(URL, {
       method: `${this.state.updateMethod}`,
@@ -74,12 +73,6 @@ class Track extends Component {
     })
     .then(res => res.json())
     .then(data => this.setState({updateMethod: ''}))
-  }
-  awaitState = () => {
-    if (this.state.updateMethod === '') {
-      this.awaitState()
-    }
-    else return console.log(this.state.updateMethod)
   }
 
   render() {
