@@ -4,11 +4,15 @@ import { UserContext } from "../context";
 import { withRouter, Redirect } from 'react-router-dom'
 
 class Track extends Component {
-  
+  constructor(props){
+    super(props);
+    this.state = {
+      updateMethod: ''
+    }
+  }
   static contextType = UserContext;
   submitTracking = (e) => {
     e.preventDefault()
-    let updateMethod;
     const a = this.props;
     const m =
       a.month === 10 || a.month === 11 || a.month === 12
@@ -25,12 +29,12 @@ class Track extends Component {
     .then(res => {
       if(res) {
         console.log(res)
-        updateMethod = 'POST'
+        this.setState({updateMethod = 'POST'})
         console.log('POST Ran as ', updateMethod)
         console.log(`method: ${updateMethod}`)
       }
       else {
-        updateMethod = 'PATCH'
+        this.setState({updateMethod = 'PATCH'})
         console.log('PATCH Ran as ', updateMethod)
       }
     })
@@ -60,7 +64,7 @@ class Track extends Component {
     const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`
     console.log(URL)
     fetch(URL, {
-      method: `"${updateMethod}"`,
+      method: `"${this.state.updateMethod}"`,
       mode: "cors",
       credentials: "same-origin",
       headers: {
