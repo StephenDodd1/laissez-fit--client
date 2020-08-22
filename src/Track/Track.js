@@ -28,8 +28,7 @@ class Track extends Component {
     .then(res => {
       if(!res.ok) {
         console.log(res)
-        reject(() => this.setState({updateMethod: 'POST'}))
-        setTimeout(() => {}, 1000)
+        resolve(() => this.setState({updateMethod: 'POST'}))
         console.log('POST Ran as ', this.state.updateMethod)
         console.log(`method: ${this.state.updateMethod}`)
       }
