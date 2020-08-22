@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import config from '../config'
 import { UserContext } from "../context";
+import { withRouter } from 'react-router-dom'
 
-export default class Track extends Component {
+class Track extends Component {
   
   static contextType = UserContext;
   submitTracking = (e) => {
@@ -47,7 +48,7 @@ export default class Track extends Component {
       body: JSON.stringify(metrics)
     })
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(data => <Redirect to={`Tracking/${data.tracking_id}`} />))
   }
   render() {
     return (
@@ -210,3 +211,4 @@ export default class Track extends Component {
     );
   }
 }
+export default withRouter(Track)
