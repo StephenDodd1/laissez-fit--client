@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import config from '../config'
 import { UserContext } from "../context";
-import { withRouter } from 'react-router-dom'
+import { withRouter, Redirect } from 'react-router-dom'
 
 class Track extends Component {
   
