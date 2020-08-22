@@ -29,12 +29,12 @@ class Track extends Component {
     .then(res => {
       if(res) {
         console.log(res)
-        this.setState({updateMethod = 'POST'})
+        this.setState({updateMethod: 'POST'})
         console.log('POST Ran as ', updateMethod)
         console.log(`method: ${updateMethod}`)
       }
       else {
-        this.setState({updateMethod = 'PATCH'})
+        this.setState({updateMethod: 'PATCH'})
         console.log('PATCH Ran as ', updateMethod)
       }
     })
