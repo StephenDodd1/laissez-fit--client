@@ -27,7 +27,7 @@ class Track extends Component {
       }
     })
     .then(res => {
-      if(res) {
+      if(!res.ok) {
         console.log(res)
         this.setState({updateMethod: 'POST'})
         console.log('POST Ran as ', this.state.updateMethod)
