@@ -21,12 +21,13 @@ export default class Login extends Component {
         {renderDemoOrUser}
           <div className="input-label">
             <label htmlFor="username">Username</label>
-            <input id="username" name="username" />
+            <input id="username" className='login-signup-inputs' name="username" />
           </div>
           <div className="input-label">
             <label htmlFor="password">Password</label>
             <input
               id="password"
+              className='login-signup-inputs'
               name="password"
               type="password"
               autoComplete="current-password"

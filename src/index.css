@@ -280,6 +280,9 @@ button {
   input {
     width: 90%;
   }
+  .login-signup-inputs{
+    width: 280px;
+  }
   #diary-label {
     padding-top: 35px;
   }

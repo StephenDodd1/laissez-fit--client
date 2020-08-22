@@ -42,27 +42,27 @@ export default class Signup extends Component {
         <form onSubmit={this.signupUser} className="credentials-box">
         <div className="input-label">
             <label htmlFor="email">Email</label>
-            <input id="email" name="email" />
+            <input id="email" className='login-signup-inputs' name="email" />
           </div>
           <div className="input-label">
             <label htmlFor="username">Username</label>
-            <input id="username" name="username" />
+            <input id="username" className='login-signup-inputs' name="username" />
           </div>
           <div className="input-label">
             <label htmlFor="password">Password</label>
-            <input id="password" type="password" name="password" />
+            <input id="password" className='login-signup-inputs' type="password" name="password" />
           </div>
           <div className="input-label">
             <label htmlFor="confirm-password">Confirm Password</label>
-            <input id="confirm password" type="password" name="confirm" />
+            <input id="confirm password" className='login-signup-inputs' type="password" name="confirm" />
           </div>
           <div className="input-label">
             <label htmlFor="Name">Name</label>
-            <input id="name" name="name" />
+            <input id="name" className='login-signup-inputs' name="name" />
           </div>
           <div className="input-label">
             <label htmlFor="dob">Date of Birth</label>
-            <input id="dob" placeholder="ex: 02/20/2000" name="dob" />
+            <input id="dob" className='login-signup-inputs' placeholder="ex: 02/20/2000" name="dob" />
           </div>
           <button>Signup</button>
           <Link to="/Demo">Demo</Link>
