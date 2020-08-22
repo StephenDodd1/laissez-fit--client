@@ -27,7 +27,7 @@ class Track extends Component {
         console.log(res)
         updateMethod = 'POST'
         console.log('POST Ran as ', updateMethod)
-        console.log(method: `${updateMethod}`)
+        console.log(`method: ${updateMethod}`)
       }
       else {
         updateMethod = 'PATCH'
