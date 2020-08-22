@@ -29,11 +29,13 @@ class Track extends Component {
       if(!res.ok) {
         console.log(res)
         this.setState({updateMethod: 'POST'})
+        setTimeout(() => {}, 500)
         console.log('POST Ran as ', this.state.updateMethod)
         console.log(`method: ${this.state.updateMethod}`)
       }
       else {
         this.setState({updateMethod: 'PATCH'})
+        setTimeout(() => {}, 500)
         console.log('PATCH Ran as ', this.state.updateMethod)
       }
     })
