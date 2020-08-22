@@ -1,84 +1,103 @@
 import React, { Component } from "react";
-import config from '../config'
+import config from "../config";
 import { UserContext } from "../context";
-import { withRouter, Redirect } from 'react-router-dom'
+import { withRouter, Redirect } from "react-router-dom";
 
 class Track extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      updateMethod: ''
-    }
+      updateMethod: "",
+    };
   }
   static contextType = UserContext;
   submitTracking = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const a = this.props;
     const m =
       a.month === 10 || a.month === 11 || a.month === 12
         ? a.month
         : "0" + a.month;
-    fetch(`${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`, {
-      method: "GET",
-      mode: "cors",
-      credentials: "same-origin",
-      headers: {
-        "Content-type": "application/json",
+    fetch(
+      `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`,
+      {
+        method: "GET",
+        mode: "cors",
+        credentials: "same-origin",
+        headers: {
+          "Content-type": "application/json",
+        },
       }
-    })
-    .then(res => {
-      if(res.status === 404) {
-        console.log(res)
-        this.setState({updateMethod: 'POST'})
-        console.log('POST Ran as ', this.state.updateMethod)
-        console.log(`method: ${this.state.updateMethod}`)
-      }
-      else {
-        this.setState({updateMethod: 'PATCH'})
-        console.log('PATCH Ran as ', this.state.updateMethod)
-      }
-    }).then(data => {
-      console.log('timeout began')
-      setTimeout(()=>{},1000)
-      return console.log('timeout finished')
-  })
-    const t = e.target;
-    let slp = parseInt(t.slp.value);
-    let men = t.men.value;
-    let act = t.act.value;
-    let stp = parseInt(t.stp.value);
-    let dia = t.dia.value;
-    let cal = parseInt(t.cal.vlaue);
-    let fat = parseInt(t.fat.value);
-    let car = parseInt(t.car.value);
-    let fib = parseInt(t.fib.value);
-    let pro = parseInt(t.pro.value);
-    let rhr = parseInt(t.rhr.value);
-    let mhr = parseInt(t.mhr.value);
-    let bps = parseInt(t.bps.value);
-    let bpd = parseInt(t.bpd.value);
-    let bls = parseInt(t.bls.value);
-    let lbs = parseInt(t.lbs.value);
-    let ins = parseInt(t.ins.value);
-    const metrics = {
-      slp, men, act, stp, dia,
-      cal, fat, car, fib, pro, rhr,
-      mhr, bps, bpd, bls, lbs, ins
-    }
-    const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`
-    console.log(URL)
-    fetch(URL, {
-      method: `${this.state.updateMethod}`,
-      mode: "cors",
-      credentials: "same-origin",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(metrics)
-    })
-    .then(res => res.json())
-    .then(data => this.props.history.push("/Demo"))
-  }
+    )
+      .then((res) => {
+        if (res.status === 404) {
+          console.log(res);
+          this.setState({ updateMethod: "POST" });
+          console.log("POST Ran as ", this.state.updateMethod);
+          console.log(`method: ${this.state.updateMethod}`);
+        } else {
+          this.setState({ updateMethod: "PATCH" });
+          console.log("PATCH Ran as ", this.state.updateMethod);
+        }
+      })
+      .then((data) => {
+        console.log("timeout began");
+        setTimeout(() => {}, 1000);
+        return console.log("timeout finished");
+      })
+      .then(() => {
+        const t = e.target;
+        let slp = parseInt(t.slp.value);
+        let men = t.men.value;
+        let act = t.act.value;
+        let stp = parseInt(t.stp.value);
+        let dia = t.dia.value;
+        let cal = parseInt(t.cal.vlaue);
+        let fat = parseInt(t.fat.value);
+        let car = parseInt(t.car.value);
+        let fib = parseInt(t.fib.value);
+        let pro = parseInt(t.pro.value);
+        let rhr = parseInt(t.rhr.value);
+        let mhr = parseInt(t.mhr.value);
+        let bps = parseInt(t.bps.value);
+        let bpd = parseInt(t.bpd.value);
+        let bls = parseInt(t.bls.value);
+        let lbs = parseInt(t.lbs.value);
+        let ins = parseInt(t.ins.value);
+        const metrics = {
+          slp,
+          men,
+          act,
+          stp,
+          dia,
+          cal,
+          fat,
+          car,
+          fib,
+          pro,
+          rhr,
+          mhr,
+          bps,
+          bpd,
+          bls,
+          lbs,
+          ins,
+        };
+        const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`;
+        console.log(URL);
+        return fetch(URL, {
+          method: `${this.state.updateMethod}`,
+          mode: "cors",
+          credentials: "same-origin",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify(metrics),
+        })
+          .then((res) => res.json())
+          .then((data) => this.props.history.push("/Demo"));
+      });
+  };
   render() {
     return (
       <div id="tracking-container">
@@ -240,4 +259,4 @@ class Track extends Component {
     );
   }
 }
-export default withRouter(Track)
+export default withRouter(Track);
