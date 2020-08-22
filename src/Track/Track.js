@@ -48,7 +48,7 @@ class Track extends Component {
       body: JSON.stringify(metrics)
     })
     .then(res => res.json())
-    .then(data => <Redirect to={`Tracking/${data.tracking_id}`} />)
+    .then(data => <Redirect to={`/Demo`} />)
   }
   render() {
     return (
