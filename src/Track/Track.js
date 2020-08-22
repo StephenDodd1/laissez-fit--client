@@ -75,7 +75,11 @@ class Track extends Component {
     .then(res => res.json())
     .then(data => <Redirect to={`/Demo`} />)
   }
-  async = () => await this.state.updateMethod === 'POST' || this.state.updateMethod === 'PATCH'
+  async = () => {
+    while (this.state.updateMethod === '') {
+      return async()
+    }
+  }
 
   render() {
     return (
