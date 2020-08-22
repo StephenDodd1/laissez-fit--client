@@ -83,6 +83,11 @@ class Track extends Component {
           lbs,
           ins,
         };
+        const a = this.props;
+    const m =
+      a.month === 10 || a.month === 11 || a.month === 12
+        ? a.month
+        : "0" + a.month;
         const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`;
         console.log(URL);
         return fetch(URL, {
