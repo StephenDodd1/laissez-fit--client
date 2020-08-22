@@ -121,7 +121,12 @@ export default class Demo extends Component {
         "Content-type": "application/json",
       },
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if(!res.ok) {
+          return this.setState({ tracking: undefined })
+        }
+        return res.json()
+      })
       .then((data) => this.setState({ tracking: data[0] }));
   };
 
