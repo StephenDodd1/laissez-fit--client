@@ -77,7 +77,7 @@ class Track extends Component {
   }
   awaitState = () => {
     if (this.state.updateMethod === '') {
-      return setTimeout(this.awaitState(), 500 )
+      this.awaitState()
     }
     else return console.log(this.state.updateMethod)
   }
