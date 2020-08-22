@@ -16,7 +16,7 @@ export default class Login extends Component {
     console.log(this.context.user_id);
     return (
       <div className = 'vertical-elements'>
-        <h2>Login</h2>
+        <h2 className='login-signup-header'>Login</h2>
         <div className="centered-form">
           <form className="credentials-box" onSubmit={this.props.submitLogin}>
             {renderDemoOrUser}
