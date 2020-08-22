@@ -76,6 +76,7 @@ h1 {
 .vertical-elements {
   display: flex;
   flex-direction: column;
+  width: 600px;
 }
 p {
   margin: 30px;
@@ -84,7 +85,7 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 600px;
+  width: 550px;
   margin: auto;
 }
 .credentials-box {
