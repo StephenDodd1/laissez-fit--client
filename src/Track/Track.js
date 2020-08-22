@@ -62,9 +62,9 @@ class Track extends Component {
       mhr, bps, bpd, bls, lbs, ins
     }
     const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`
-    console.log(URL)
+    await this.state.updateMethod === 'POST' || this.state.updateMethod === 'PATCH'
     fetch(URL, {
-      method: `"${this.state.updateMethod}"`,
+      method: `${this.state.updateMethod}`,
       mode: "cors",
       credentials: "same-origin",
       headers: {
