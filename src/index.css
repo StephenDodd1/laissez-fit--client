@@ -80,6 +80,7 @@ h1 {
   align-items: center;
   justify-content: center;
   width: 600px;
+  margin: auto
 }
 p {
   margin: 30px;
