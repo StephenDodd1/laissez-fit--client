@@ -8,6 +8,7 @@ class Track extends Component {
     super(props);
     this.state = {
       updateMethod: "POST",
+      trackingId: 0,
     };
   }
   static contextType = UserContext;
@@ -68,9 +69,12 @@ class Track extends Component {
         body: JSON.stringify(metrics),
       })
         .then((res) => res.json())
-        .then((data) => this.setState({ updateMethod: "PATCH" }));
+        .then((data) => {
+          this.setState({ updateMethod: "PATCH" })
+          return this.setState({ trackingId: data.id })
+      });
     } else if (this.state.updateMethod === "PATCH") {
-      const tracking_id = this.state.tracking.id;
+      const tracking_id = this.state.tracking.trackingId;
       const t = e.target;
       let slp = parseInt(t.slp.value);
       let men = t.men.value;
