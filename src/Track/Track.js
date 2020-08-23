@@ -76,9 +76,9 @@ class Track extends Component {
         })
         .then((data) => {
           this.setState({ updateMethod: "PATCH" });
-          return alert("Your day has successfully posted");
+          return alert("Your data has successfully posted");
         })
-        .then(get => {
+        .then((get) => {
           const a = this.props;
           const m =
             a.month === 10 || a.month === 11 || a.month === 12
@@ -95,10 +95,9 @@ class Track extends Component {
           })
             .then((res) => res.json())
             .then((data) => {
-              console.log(data)
-            return this.setState({ tracking: data[0] })});
-        }
-      );
+              return this.setState({ tracking: data[0] });
+            });
+        });
     } else if (this.state.updateMethod === "PATCH") {
       const tracking_id = this.state.tracking.id;
       const t = e.target;
@@ -154,9 +153,13 @@ class Track extends Component {
           "Content-type": "application/json",
         },
         body: JSON.stringify(metrics),
-      })
-        .then((res) => res.json())
-        .then((data) => console.log(data));
+      }).then((res) => {
+        if (!res.ok) {
+          return alert("A problem prevented your data from being saved");
+        }
+        res.json();
+        return alert("Your data has been successfully updated");
+      });
     }
   };
   render() {
