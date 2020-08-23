@@ -70,6 +70,7 @@ class Track extends Component {
       })
         .then((res) => res.json())
         .then((data) => {
+          console.log(data)
           this.setState({ updateMethod: "PATCH" })
           return this.setState({ trackingId: data.id })
       });
