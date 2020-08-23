@@ -22,7 +22,7 @@ export default class Tracking extends Component {
     let act = t.act.value;
     let stp = parseInt(t.stp.value);
     let dia = t.dia.value;
-    let cal = parseInt(t.cal.vlaue);
+    let cal = parseInt(t.cal.value);
     let fat = parseInt(t.fat.value);
     let car = parseInt(t.car.value);
     let fib = parseInt(t.fib.value);
