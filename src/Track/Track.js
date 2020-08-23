@@ -7,18 +7,18 @@ class Track extends Component {
   constructor(props){
     super(props);
     this.state = {
-      updateMethod: ''
+      updateMethod: 'POST'
     }
   }
   static contextType = UserContext;
   submitTracking = (e) => {
     e.preventDefault()
+    if(this.state.updateMethod === 'POST') {
     const a = this.props;
     const m =
       a.month === 10 || a.month === 11 || a.month === 12
         ? a.month
         : "0" + a.month;
-    this.props.getDay();
     const t = e.target;
     let slp = parseInt(t.slp.value);
     let men = t.men.value;
@@ -54,8 +54,9 @@ class Track extends Component {
       body: JSON.stringify(metrics)
     })
     .then(res => res.json())
-    .then(data => this.props.history.push("/Demo"))
+    .then(data => this.setState({updateMethod: 'PATCH'}))
   }
+}
   render() {
     return (
       <div id="tracking-container">
