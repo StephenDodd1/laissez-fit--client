@@ -57,7 +57,7 @@ export default class Tracking extends Component {
       body: JSON.stringify(metrics)
     })
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(data => alert("Your data has been successfully updated"))
   };
   componentDidMount() {
     this.setState({ tracking: this.props.tracking });
