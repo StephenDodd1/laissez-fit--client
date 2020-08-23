@@ -75,7 +75,6 @@ class Track extends Component {
           return res.json();
         })
         .then((data) => {
-          console.log(data);
           this.setState({ updateMethod: "PATCH" });
           return alert("Your day has successfully posted");
         })
@@ -95,7 +94,9 @@ class Track extends Component {
             },
           })
             .then((res) => res.json())
-            .then((data) => this.setState({ tracking: data[0] }));
+            .then((data) => {
+              console.log(data)
+            return this.setState({ tracking: data[0] })});
         }
       );
     } else if (this.state.updateMethod === "PATCH") {
