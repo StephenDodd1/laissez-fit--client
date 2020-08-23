@@ -8,7 +8,7 @@ class Track extends Component {
     super(props);
     this.state = {
       updateMethod: "POST",
-      trackingId: 0,
+      tracking: null,
     };
   }
   static contextType = UserContext;
@@ -68,14 +68,38 @@ class Track extends Component {
         },
         body: JSON.stringify(metrics),
       })
-        .then((res) => res.json())
+        .then((res) => {
+          if (!res.ok) {
+            alert("Something went wrong. Try again later.");
+          }
+          return res.json();
+        })
         .then((data) => {
-          console.log(data)
-          this.setState({ updateMethod: "PATCH" })
-          return this.setState({ trackingId: data.id })
-      });
+          console.log(data);
+          this.setState({ updateMethod: "PATCH" });
+          return alert("Your day has successfully posted");
+        })
+        .then(get => {
+          const a = this.props;
+          const m =
+            a.month === 10 || a.month === 11 || a.month === 12
+              ? a.month
+              : "0" + a.month;
+          const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`;
+          fetch(URL, {
+            method: "GET",
+            mode: "cors",
+            credentials: "same-origin",
+            headers: {
+              "Content-type": "application/json",
+            },
+          })
+            .then((res) => res.json())
+            .then((data) => this.setState({ tracking: data[0] }));
+        }
+      );
     } else if (this.state.updateMethod === "PATCH") {
-      const tracking_id = this.state.tracking.trackingId;
+      const tracking_id = this.state.tracking.id;
       const t = e.target;
       let slp = parseInt(t.slp.value);
       let men = t.men.value;
