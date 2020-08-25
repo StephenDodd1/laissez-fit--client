@@ -18,6 +18,7 @@ export default class Signup extends Component {
     const name = e.target.name.value;
     const dob = e.target.dob.value;
     const formattedDob = new Date(dob)
+    console.log('formattedDob', formattedDob)
     if (password !== confirm) {
       return alert("Passwords do not match");
     } else if (!email || !username || !password || !name || !dob) {
