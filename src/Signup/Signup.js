@@ -21,7 +21,7 @@ export default class Signup extends Component {
       return alert("Passwords do not match");
     } else if (!email || !username || !password || !name || !dob) {
       return alert("All fields are required");
-    } else if (!emailRegExp(email)) {
+    } else if (!this.emailRegExp(email)) {
       return alert("Email must be atleast 6 characters");
     } else if (password.length < 6) {
       return alert("Email must be atleast 4 characters");
