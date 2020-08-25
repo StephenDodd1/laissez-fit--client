@@ -65,6 +65,7 @@ export default class Signup extends Component {
                   id="email"
                   className="login-signup-inputs"
                   name="email"
+                  placeholder="example@nomail.com"
                 />
               </div>
               <div className="input-label">
