@@ -24,10 +24,10 @@ export default class Signup extends Component {
     } else if (!this.emailRegExp(email)) {
       return alert("Email must be atleast 6 characters");
     } else if (password.length < 6) {
-      return alert("Email must be atleast 4 characters");
+      return alert("Password must be atleast 4 characters");
     } else if (name.length < 2) {
       return alert("Email must be atleast 4 characters");
-    } else if (new Date(dob).isValid() === false) {
+    } else if (this.isValid(new Date(dob)) === false) {
       return alert("Please enter a valid date of birth");
     }
     const user = {
@@ -51,7 +51,8 @@ export default class Signup extends Component {
       .then((data) => console.log(data));
   };
   render() {
-    Date.prototype.isValid = () => this.getTime() === this.getTime();
+    Date.prototype.isValid = (dob) => 
+    this.getTime() === this.getTime();
     return (
       <div className="background">
         <div className="vertical-elements">
