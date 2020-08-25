@@ -95,12 +95,12 @@ export default class Signup extends Component {
                   type="password"
                   name="confirm"
                   placeholder="confirm"
-
                 />
               </div>
               <div className="input-label">
                 <label htmlFor="Name">Name</label>
-                <input id="name" className="login-signup-inputs" name="name" />
+                <input id="name" className="login-signup-inputs" name="name" 
+                  placeholder="Hi, what's your name?" />
               </div>
               <div className="input-label">
                 <label htmlFor="dob">Date of Birth</label>
