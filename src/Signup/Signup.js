@@ -14,14 +14,24 @@ export default class Signup extends Component {
     const dob = e.target.dob.value;
     if (password !== confirm) {
       return alert("Passwords do not match");
+    } else if (!email || !username || !password || !name || !dob) {
+      return alert("All fields are required");
+    } else if (email.length < 4) {
+      return alert("Email must be atleast 4 characters");
+    } else if (password.length < 6) {
+      return alert("Email must be atleast 4 characters");
+    } else if (name.length < 2) {
+      return alert("Email must be atleast 4 characters");
+    } else if (new Date(dob).isValid() === false) {
+      return alert('Please enter a valid date of birth')
     }
-    const user = {
-      email,
-      username,
-      password,
-      name,
-      dob,
-    };
+      const user = {
+        email,
+        username,
+        password,
+        name,
+        dob,
+      };
     const URL = `${config.API_URL}/api/users`;
     fetch(URL, {
       method: "POST",
@@ -36,9 +46,10 @@ export default class Signup extends Component {
       .then((data) => console.log(data));
   };
   render() {
+    Date.prototype.isValid = () => this.getTime() === this.getTime();
     return (
       <div className="vertical-elements">
-        <h2>Submit</h2>
+        <h2 className="login-signup-header">Signup</h2>
         <div className="centered-form">
           <form onSubmit={this.signupUser} className="credentials-box">
             <div className="input-label">
