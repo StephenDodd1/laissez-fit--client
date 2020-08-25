@@ -29,7 +29,7 @@ export default class Signup extends Component {
       return alert("Password must be atleast 6 characters");
     } else if (name.length < 2) {
       return alert("Name must be at least 2 characters");
-    } else if (formattedDob === 'Invalid Date') {
+    } else if (formattedDob == 'Invalid Date') {
       return alert("Please enter a valid date of birth");
     }
     const user = {
