@@ -48,58 +48,64 @@ export default class Signup extends Component {
   render() {
     Date.prototype.isValid = () => this.getTime() === this.getTime();
     return (
-      <div className="vertical-elements">
-        <h2 className="login-signup-header">Signup</h2>
-        <div className="centered-form">
-          <form onSubmit={this.signupUser} className="credentials-box">
-            <div className="input-label">
-              <label htmlFor="email">Email</label>
-              <input id="email" className="login-signup-inputs" name="email" />
-            </div>
-            <div className="input-label">
-              <label htmlFor="username">Username</label>
-              <input
-                id="username"
-                className="login-signup-inputs"
-                name="username"
-              />
-            </div>
-            <div className="input-label">
-              <label htmlFor="password">Password</label>
-              <input
-                id="password"
-                className="login-signup-inputs"
-                type="password"
-                name="password"
-              />
-            </div>
-            <div className="input-label">
-              <label htmlFor="confirm-password">Confirm Password</label>
-              <input
-                id="confirm password"
-                className="login-signup-inputs"
-                type="password"
-                name="confirm"
-              />
-            </div>
-            <div className="input-label">
-              <label htmlFor="Name">Name</label>
-              <input id="name" className="login-signup-inputs" name="name" />
-            </div>
-            <div className="input-label">
-              <label htmlFor="dob">Date of Birth</label>
-              <input
-                id="dob"
-                className="login-signup-inputs"
-                placeholder="ex: 02/20/2000"
-                name="dob"
-              />
-            </div>
-            <button>Signup</button>
-            <Link to="/Demo">Demo</Link>
-          </form>
+      <div className="background">
+        <div className="vertical-elements">
+          <h2 className="login-signup-header">Signup</h2>
+          <div className="centered-form">
+            <form onSubmit={this.signupUser} className="credentials-box">
+              <div className="input-label">
+                <label htmlFor="email">Email</label>
+                <input
+                  id="email"
+                  className="login-signup-inputs"
+                  name="email"
+                />
+              </div>
+              <div className="input-label">
+                <label htmlFor="username">Username</label>
+                <input
+                  id="username"
+                  className="login-signup-inputs"
+                  name="username"
+                />
+              </div>
+              <div className="input-label">
+                <label htmlFor="password">Password</label>
+                <input
+                  id="password"
+                  className="login-signup-inputs"
+                  type="password"
+                  name="password"
+                />
+              </div>
+              <div className="input-label">
+                <label htmlFor="confirm-password">Confirm Password</label>
+                <input
+                  id="confirm password"
+                  className="login-signup-inputs"
+                  type="password"
+                  name="confirm"
+                />
+              </div>
+              <div className="input-label">
+                <label htmlFor="Name">Name</label>
+                <input id="name" className="login-signup-inputs" name="name" />
+              </div>
+              <div className="input-label">
+                <label htmlFor="dob">Date of Birth</label>
+                <input
+                  id="dob"
+                  className="login-signup-inputs"
+                  placeholder="ex: 02/20/2000"
+                  name="dob"
+                />
+              </div>
+              <button>Signup</button>
+              <Link to="/Demo">Demo</Link>
+            </form>
+          </div>
+          <div className="background" id="login-footer"></div>
         </div>
-        <div className="background" id="login-footer"></div>
       </div>
     );
   }
