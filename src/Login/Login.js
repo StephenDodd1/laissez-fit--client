@@ -48,7 +48,7 @@ export default class Login extends Component {
             </div>
           </div>
         </div>
-        <div className="background"></div>
+        <div className="background" id='login-footer'></div>
       </div>
     );
   }

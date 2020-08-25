@@ -23,6 +23,11 @@ header {
   height: 100%;
   width: 100%;
 }
+#login-footer {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
 .link,
 .links {
   margin-top: 40px;
