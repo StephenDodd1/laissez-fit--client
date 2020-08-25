@@ -25,8 +25,8 @@ export default class Signup extends Component {
       return alert("All fields are required");
     } else if (!this.emailRegExp(email)) {
       return alert("Plese enter a valid email address");
-    } else if (password.length < 6) {
-      return alert("Password must be atleast 6 characters");
+    } else if (password.length < 8) {
+      return alert("Password must be atleast 8 characters");
     } else if (name.length < 2) {
       return alert("Name must be at least 2 characters");
     } else if (formattedDob == 'Invalid Date') {
@@ -73,6 +73,7 @@ export default class Signup extends Component {
                   id="username"
                   className="login-signup-inputs"
                   name="username"
+                  placeholder="4 or more characters"
                 />
               </div>
               <div className="input-label">
@@ -82,6 +83,7 @@ export default class Signup extends Component {
                   className="login-signup-inputs"
                   type="password"
                   name="password"
+                  placeholder="8 or more characters"
                 />
               </div>
               <div className="input-label">
@@ -91,6 +93,8 @@ export default class Signup extends Component {
                   className="login-signup-inputs"
                   type="password"
                   name="confirm"
+                  placeholder="confirm"
+
                 />
               </div>
               <div className="input-label">
