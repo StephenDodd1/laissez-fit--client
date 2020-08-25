@@ -53,7 +53,6 @@ export default class Signup extends Component {
   };
   render() {
     Date.prototype.isValid = () => 
-    console.log()
     this.getTime() === this.getTime();
     return (
       <div className="background">
