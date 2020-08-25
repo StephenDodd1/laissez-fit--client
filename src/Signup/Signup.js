@@ -17,6 +17,7 @@ export default class Signup extends Component {
     const confirm = e.target.confirm.value;
     const name = e.target.name.value;
     const dob = e.target.dob.value;
+    const formattedDob = new Date(dob)
     if (password !== confirm) {
       return alert("Passwords do not match");
     } else if (!email || !username || !password || !name || !dob) {
@@ -27,7 +28,7 @@ export default class Signup extends Component {
       return alert("Password must be atleast 4 characters");
     } else if (name.length < 2) {
       return alert("Email must be atleast 4 characters");
-    } else if (!(new Date(dob).this.isValid())) {
+    } else if (!(formattedDob.this.isValid())) {
       return alert("Please enter a valid date of birth");
     }
     const user = {
@@ -52,6 +53,7 @@ export default class Signup extends Component {
   };
   render() {
     Date.prototype.isValid = () => 
+    console.log()
     this.getTime() === this.getTime();
     return (
       <div className="background">
