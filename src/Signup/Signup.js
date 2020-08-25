@@ -27,7 +27,7 @@ export default class Signup extends Component {
       return alert("Password must be atleast 4 characters");
     } else if (name.length < 2) {
       return alert("Email must be atleast 4 characters");
-    } else if (this.isValid(new Date(dob)) === false) {
+    } else if (new Date(dob).this.isValid() === false) {
       return alert("Please enter a valid date of birth");
     }
     const user = {
@@ -51,7 +51,7 @@ export default class Signup extends Component {
       .then((data) => console.log(data));
   };
   render() {
-    Date.prototype.isValid = (dob) => 
+    Date.prototype.isValid = () => 
     this.getTime() === this.getTime();
     return (
       <div className="background">
