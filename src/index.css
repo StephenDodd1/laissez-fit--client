@@ -20,6 +20,8 @@ header {
 }
 .background {
   background: black;
+  height: 100%;
+  width: 100%;
 }
 .link,
 .links {
