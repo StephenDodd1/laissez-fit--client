@@ -104,8 +104,8 @@ export default class Signup extends Component {
               <Link to="/Demo">Demo</Link>
             </form>
           </div>
-          <div className="background" id="login-footer"></div>
         </div>
+        <div className="background" id="login-footer"></div>
       </div>
     );
   }
