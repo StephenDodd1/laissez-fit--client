@@ -23,15 +23,15 @@ export default class Signup extends Component {
     } else if (name.length < 2) {
       return alert("Email must be atleast 4 characters");
     } else if (new Date(dob).isValid() === false) {
-      return alert('Please enter a valid date of birth')
+      return alert("Please enter a valid date of birth");
     }
-      const user = {
-        email,
-        username,
-        password,
-        name,
-        dob,
-      };
+    const user = {
+      email,
+      username,
+      password,
+      name,
+      dob,
+    };
     const URL = `${config.API_URL}/api/users`;
     fetch(URL, {
       method: "POST",
@@ -99,6 +99,7 @@ export default class Signup extends Component {
             <Link to="/Demo">Demo</Link>
           </form>
         </div>
+        <div className="background" id="login-footer"></div>
       </div>
     );
   }
