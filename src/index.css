@@ -95,12 +95,14 @@ p {
   flex-direction: row;
   justify-content: center;
   width: 550px;
+  height: 100%;
   margin: auto;
 }
 .credentials-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-bottom: 40px;
 }
 label {
   display: inline-block;
