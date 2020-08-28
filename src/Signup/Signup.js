@@ -10,7 +10,6 @@ export default class Signup extends Component {
   }
   signupUser = (e) => {
     e.preventDefault();
-    console.log("signup user ran");
     const email = e.target.email.value;
     const username = e.target.username.value;
     const password = e.target.password.value;
@@ -18,7 +17,6 @@ export default class Signup extends Component {
     const name = e.target.name.value;
     const dob = e.target.dob.value;
     const formattedDob = new Date(dob)
-    console.log('formattedDob', formattedDob)
     if (password !== confirm) {
       return alert("Passwords do not match");
     } else if (!email || !username || !password || !name || !dob) {
@@ -50,7 +48,6 @@ export default class Signup extends Component {
       body: JSON.stringify(user),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
   };
   render() {
     return (

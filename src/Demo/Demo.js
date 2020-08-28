@@ -124,7 +124,6 @@ export default class Demo extends Component {
       .then((res) => res.json()
       .then((data) => {
         if(res.status === 404) {
-          console.log(res.status)
           return this.setState({ tracking: undefined })
         }
         else return this.setState({ tracking: data[0] })
@@ -133,7 +132,6 @@ export default class Demo extends Component {
 
   render() {
     const t = this.state.tracking;
-    console.log(t);
     const renderTracking =
       this.state.tracking !== null && this.state.tracking !== undefined ? (
         <Tracking

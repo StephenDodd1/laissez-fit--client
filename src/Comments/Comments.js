@@ -10,7 +10,6 @@ export default class Comments extends Component {
     };
   }
   componentDidMount() {
-    console.log(this.props.article_id);
     const URL = `${config.API_URL}/api/${this.props.article_id}/comments`;
     fetch(URL, {
       method: "GET",
@@ -40,7 +39,6 @@ export default class Comments extends Component {
       }
       res.json()
     })
-    .then(data => console.log(data))
   }
   render() {
     return (
@@ -51,7 +49,6 @@ export default class Comments extends Component {
             <div className='comment-box' key={i}>
               <h4>Posted by: <span className='username'>{comment.username}</span></h4>
               <p>{comment.comment}</p>
-              {console.log(comment.comment_id)}
               <button id='trash-button' onClick={this.deleteComment} value={comment.comment_id} className="fa fa-trash"></button>
             </div>
           );

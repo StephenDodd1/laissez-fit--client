@@ -58,7 +58,6 @@ class Track extends Component {
         ins,
       };
       const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`;
-      console.log(URL);
       fetch(URL, {
         method: "POST",
         mode: "cors",
@@ -144,7 +143,6 @@ class Track extends Component {
           ? a.month
           : "0" + a.month;
       const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`;
-      console.log(URL);
       fetch(URL, {
         method: "PATCH",
         mode: "cors",

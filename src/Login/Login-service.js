@@ -2,7 +2,6 @@ import config from "../config";
 
 const LoginService = {
   saveAuthToken(token) {
-    console.log(token);
     return window.localStorage.setItem(config.TOKEN_KEY, token);
   },
   getAuthToken() {

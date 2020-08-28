@@ -32,7 +32,6 @@ export default class Articles extends Component {
       (topic) => topic.topic === "Fitness"
     );
     const fitnessArticlesList = fitnessArticles.map((article, i) => {
-      console.log(article.content);
       return (
         <li key={i}>
           <Link to={`/Article/${article.articleId}`}>{article.title}</Link>

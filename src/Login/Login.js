@@ -13,7 +13,6 @@ export default class Login extends Component {
     ) : (
       <Link to="/Demo">Demo</Link>
     );
-    console.log(this.context.user_id);
     return (
       <div>
         <div className="background">

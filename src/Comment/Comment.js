@@ -20,7 +20,6 @@ export default class Comment extends Component {
       },
       body: JSON.stringify(content)
     })
-    console.log(URL, " and", this.context.user_id)
   }
   render() {
     return(
