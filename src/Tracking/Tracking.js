@@ -22,7 +22,7 @@ export default class Tracking extends Component {
     let act = t.act.value;
     let stp = parseInt(t.stp.value);
     let dia = t.dia.value;
-    let cal = parseInt(t.cal.vlaue);
+    let cal = parseInt(t.cal.value);
     let fat = parseInt(t.fat.value);
     let car = parseInt(t.car.value);
     let fib = parseInt(t.fib.value);
@@ -57,7 +57,7 @@ export default class Tracking extends Component {
       body: JSON.stringify(metrics)
     })
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(data => alert("Your data has been successfully updated"))
   };
   componentDidMount() {
     this.setState({ tracking: this.props.tracking });

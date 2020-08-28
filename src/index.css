@@ -2,6 +2,9 @@
   font-family: "Lucida Console", Monaco, monospace;
   background: moccasin;
 }
+.required {
+  color: red;
+}
 .App {
   background: black;
   margin: -20px;
@@ -14,9 +17,19 @@ header {
   background-image: url("frogs-1274769_1280.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100% 100%;
+  background-size: 99% 100%;
   margin: -40px;
   margin-bottom: 3px;
+}
+.background {
+  background: black;
+  height: 100%;
+  width: 100%;
+}
+#login-footer {
+  display: block;
+  height: 300px;
+  width: 100%;
 }
 .link,
 .links {
@@ -32,7 +45,7 @@ header {
 }
 .App-logo {
   border-radius: 50%;
-  opacity: 84%;
+  opacity: .84;
 }
 
 .App-header,
@@ -46,7 +59,11 @@ header {
 .outer-box {
   margin-top: -20px;
 }
-
+.login-signup-header {
+  width: 150px;
+  padding-left: 100px;
+  margin-left: 100px;
+}
 h1 {
   margin-top: 0px;
   background: none;
@@ -70,7 +87,16 @@ h1 {
   font-size: 22px;
   font-weight: lighter;
 }
-
+.vertical-elements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  margin: auto;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
 p {
   margin: 30px;
 }
@@ -78,11 +104,15 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  width: 550px;
+  height: 100%;
+  margin: auto;
 }
 .credentials-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-bottom: 40px;
 }
 label {
   display: inline-block;
@@ -114,7 +144,7 @@ input:focus {
 }
 input {
   background: white;
-  border-radius: 2px;
+  border-radius: 12px;
   height: 30px;
   width: 230px;
 }
@@ -279,6 +309,9 @@ button {
   }
   input {
     width: 90%;
+  }
+  .login-signup-inputs{
+    width: 230px;
   }
   #diary-label {
     padding-top: 35px;

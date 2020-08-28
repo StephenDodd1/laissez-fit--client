@@ -1,55 +1,167 @@
 import React, { Component } from "react";
-import config from '../config'
+import config from "../config";
 import { UserContext } from "../context";
-import { withRouter } from 'react-router-dom'
+import { withRouter, Redirect } from "react-router-dom";
 
 class Track extends Component {
-  
+  constructor(props) {
+    super(props);
+    this.state = {
+      updateMethod: "POST",
+      tracking: null,
+    };
+  }
   static contextType = UserContext;
   submitTracking = (e) => {
-    e.preventDefault()
-    const t = e.target;
-    let slp = parseInt(t.slp.value);
-    let men = t.men.value;
-    let act = t.act.value;
-    let stp = parseInt(t.stp.value);
-    let dia = t.dia.value;
-    let cal = parseInt(t.cal.vlaue);
-    let fat = parseInt(t.fat.value);
-    let car = parseInt(t.car.value);
-    let fib = parseInt(t.fib.value);
-    let pro = parseInt(t.pro.value);
-    let rhr = parseInt(t.rhr.value);
-    let mhr = parseInt(t.mhr.value);
-    let bps = parseInt(t.bps.value);
-    let bpd = parseInt(t.bpd.value);
-    let bls = parseInt(t.bls.value);
-    let lbs = parseInt(t.lbs.value);
-    let ins = parseInt(t.ins.value);
-    const metrics = {
-      slp, men, act, stp, dia,
-      cal, fat, car, fib, pro, rhr,
-      mhr, bps, bpd, bls, lbs, ins
-    }
-    const a = this.props;
+    e.preventDefault();
+    if (this.state.updateMethod === "POST") {
+      const a = this.props;
       const m =
         a.month === 10 || a.month === 11 || a.month === 12
           ? a.month
           : "0" + a.month;
-    const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`
-    console.log(URL)
-    fetch(URL, {
-      method: "POST",
-      mode: "cors",
-      credentials: "same-origin",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(metrics)
-    })
-    .then(res => res.json())
-    .then(data => <Redirect to={`Tracking/${data.tracking_id}`} />))
-  }
+      const t = e.target;
+      let slp = parseInt(t.slp.value);
+      let men = t.men.value;
+      let act = t.act.value;
+      let stp = parseInt(t.stp.value);
+      let dia = t.dia.value;
+      let cal = parseInt(t.cal.vlaue);
+      let fat = parseInt(t.fat.value);
+      let car = parseInt(t.car.value);
+      let fib = parseInt(t.fib.value);
+      let pro = parseInt(t.pro.value);
+      let rhr = parseInt(t.rhr.value);
+      let mhr = parseInt(t.mhr.value);
+      let bps = parseInt(t.bps.value);
+      let bpd = parseInt(t.bpd.value);
+      let bls = parseInt(t.bls.value);
+      let lbs = parseInt(t.lbs.value);
+      let ins = parseInt(t.ins.value);
+      const metrics = {
+        slp,
+        men,
+        act,
+        stp,
+        dia,
+        cal,
+        fat,
+        car,
+        fib,
+        pro,
+        rhr,
+        mhr,
+        bps,
+        bpd,
+        bls,
+        lbs,
+        ins,
+      };
+      const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`;
+      console.log(URL);
+      fetch(URL, {
+        method: "POST",
+        mode: "cors",
+        credentials: "same-origin",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(metrics),
+      })
+        .then((res) => {
+          if (!res.ok) {
+            alert("Something went wrong. Try again later.");
+          }
+          return res.json();
+        })
+        .then((data) => {
+          this.setState({ updateMethod: "PATCH" });
+          return alert("Your data has successfully posted");
+        })
+        .then((get) => {
+          const a = this.props;
+          const m =
+            a.month === 10 || a.month === 11 || a.month === 12
+              ? a.month
+              : "0" + a.month;
+          const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`;
+          fetch(URL, {
+            method: "GET",
+            mode: "cors",
+            credentials: "same-origin",
+            headers: {
+              "Content-type": "application/json",
+            },
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              return this.setState({ tracking: data[0] });
+            });
+        });
+    } else if (this.state.updateMethod === "PATCH") {
+      const tracking_id = this.state.tracking.id;
+      const t = e.target;
+      let slp = parseInt(t.slp.value);
+      let men = t.men.value;
+      let act = t.act.value;
+      let stp = parseInt(t.stp.value);
+      let dia = t.dia.value;
+      let cal = parseInt(t.cal.value);
+      let fat = parseInt(t.fat.value);
+      let car = parseInt(t.car.value);
+      let fib = parseInt(t.fib.value);
+      let pro = parseInt(t.pro.value);
+      let rhr = parseInt(t.rhr.value);
+      let mhr = parseInt(t.mhr.value);
+      let bps = parseInt(t.bps.value);
+      let bpd = parseInt(t.bpd.value);
+      let bls = parseInt(t.bls.value);
+      let lbs = parseInt(t.lbs.value);
+      let ins = parseInt(t.ins.value);
+      const metrics = {
+        tracking_id,
+        slp,
+        men,
+        act,
+        stp,
+        dia,
+        cal,
+        fat,
+        car,
+        fib,
+        pro,
+        rhr,
+        mhr,
+        bps,
+        bpd,
+        bls,
+        lbs,
+        ins,
+      };
+      const a = this.props;
+      const m =
+        a.month === 10 || a.month === 11 || a.month === 12
+          ? a.month
+          : "0" + a.month;
+      const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`;
+      console.log(URL);
+      fetch(URL, {
+        method: "PATCH",
+        mode: "cors",
+        credentials: "same-origin",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(metrics),
+      }).then((res) => {
+        if (!res.ok) {
+          return alert("A problem prevented your data from being saved");
+        }
+        res.json();
+        return alert("Your data has been successfully updated");
+      });
+    }
+  };
   render() {
     return (
       <div id="tracking-container">
@@ -211,4 +323,4 @@ class Track extends Component {
     );
   }
 }
-export default withRouter(Track)
+export default withRouter(Track);
