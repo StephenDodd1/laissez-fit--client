@@ -60,7 +60,7 @@ export default class Signup extends Component {
           <div className="centered-form">
             <form onSubmit={this.signupUser} className="credentials-box">
               <div className="input-label">
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">Email <span className='required'>&#42;</span></label>
                 <input
                   id="email"
                   className="login-signup-inputs"
@@ -69,7 +69,7 @@ export default class Signup extends Component {
                 />
               </div>
               <div className="input-label">
-                <label htmlFor="username">Username</label>
+                <label htmlFor="username">Username <span className='required'>&#42;</span></label>
                 <input
                   id="username"
                   className="login-signup-inputs"
@@ -78,7 +78,7 @@ export default class Signup extends Component {
                 />
               </div>
               <div className="input-label">
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">Password <span className='required'>&#42;</span></label>
                 <input
                   id="password"
                   className="login-signup-inputs"
@@ -98,12 +98,12 @@ export default class Signup extends Component {
                 />
               </div>
               <div className="input-label">
-                <label htmlFor="Name">Name</label>
+                <label htmlFor="Name">Name <span className='required'>&#42;</span></label>
                 <input id="name" className="login-signup-inputs" name="name" 
                   placeholder="Hi, what's your name?" />
               </div>
               <div className="input-label">
-                <label htmlFor="dob">Date of Birth</label>
+                <label htmlFor="dob">Date of Birth <span className='required'>&#42;</span></label>
                 <input
                   id="dob"
                   className="login-signup-inputs"

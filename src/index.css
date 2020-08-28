@@ -2,6 +2,9 @@
   font-family: "Lucida Console", Monaco, monospace;
   background: moccasin;
 }
+.required {
+  color: red;
+}
 .App {
   background: black;
   margin: -20px;
@@ -93,7 +96,6 @@ h1 {
   margin: auto;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
-
 }
 p {
   margin: 30px;
