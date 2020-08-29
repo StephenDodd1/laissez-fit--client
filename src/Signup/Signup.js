@@ -64,7 +64,9 @@ export default class Signup extends Component {
   };
   render() {
     const renderLogin = this.state.userCreated ? (
+      <div className='articles-link' >
       <Link to="Login">Login</Link>
+      </div>
     ) : (
       <Link to="/Demo">Demo</Link>
     );
