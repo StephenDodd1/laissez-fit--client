@@ -6,7 +6,7 @@ export default class Login extends Component {
   static contextType = UserContext;
   render() {
     const renderDemoOrUser = this.context.name ? (
-      <div className='articles-link' >
+      <div className="articles-link">
         <p>
           Hey {this.context.name},&ensp;
           <Link to="/Demo">go to your logs</Link>
@@ -19,13 +19,13 @@ export default class Login extends Component {
       <div>
         <div className="background">
           <div className="vertical-elements">
+            {renderDemoOrUser}
             <h2 className="login-signup-header">Login</h2>
             <div className="centered-form">
               <form
                 className="credentials-box"
                 onSubmit={this.props.submitLogin}
               >
-                {renderDemoOrUser}
                 <div className="input-label">
                   <label htmlFor="username">Username</label>
                   <input
@@ -49,7 +49,7 @@ export default class Login extends Component {
             </div>
           </div>
         </div>
-        <div className="background" id='login-footer'></div>
+        <div className="background" id="login-footer"></div>
       </div>
     );
   }
