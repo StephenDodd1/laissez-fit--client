@@ -3,11 +3,19 @@ import { Link } from "react-router-dom";
 import config from "../config";
 
 export default class Signup extends Component {
-  emailRegExp = (email) => {
-    let matchEmail = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
-    let emailMatchTestVal = matchEmail.test(email);
-    return emailMatchTestVal
+  constructor(props) {
+    super(props);
+    this.state = {
+      userCreated: false,
+    };
   }
+  emailRegExp = (email) => {
+    let matchEmail = new RegExp(
+      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    );
+    let emailMatchTestVal = matchEmail.test(email);
+    return emailMatchTestVal;
+  };
   signupUser = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -16,7 +24,7 @@ export default class Signup extends Component {
     const confirm = e.target.confirm.value;
     const name = e.target.name.value;
     const dob = e.target.dob.value;
-    const formattedDob = new Date(dob)
+    const formattedDob = new Date(dob);
     if (password !== confirm) {
       return alert("Passwords do not match");
     } else if (!email || !username || !password || !name || !dob) {
@@ -27,7 +35,7 @@ export default class Signup extends Component {
       return alert("Password must be atleast 8 characters");
     } else if (name.length < 2) {
       return alert("Name must be at least 2 characters");
-    } else if (formattedDob == 'Invalid Date') {
+    } else if (formattedDob == "Invalid Date") {
       return alert("Please enter a valid date of birth");
     }
     const user = {
@@ -46,18 +54,33 @@ export default class Signup extends Component {
         "Content-type": "application/json",
       },
       body: JSON.stringify(user),
-    })
-      .then((res) => res.json())
+    }).then((res) => {
+      if (!res.ok) {
+        return alert("Something went wrong.");
+      }
+      this.setState({ userCreated: true });
+      return res.json();
+    });
   };
   render() {
+    renderLogin = () => {
+      userCreated ? (
+        <Link to="Login">Login</Link>
+      ) : (
+        <Link to="/Demo">Demo</Link>
+      );
+    };
     return (
       <div className="background">
         <div className="vertical-elements">
+          {renderLogin}
           <h2 className="login-signup-header">Signup</h2>
           <div className="centered-form">
             <form onSubmit={this.signupUser} className="credentials-box">
               <div className="input-label">
-                <label htmlFor="email">Email <span className='required'>&#42;</span></label>
+                <label htmlFor="email">
+                  Email <span className="required">&#42;</span>
+                </label>
                 <input
                   id="email"
                   className="login-signup-inputs"
@@ -66,7 +89,9 @@ export default class Signup extends Component {
                 />
               </div>
               <div className="input-label">
-                <label htmlFor="username">Username <span className='required'>&#42;</span></label>
+                <label htmlFor="username">
+                  Username <span className="required">&#42;</span>
+                </label>
                 <input
                   id="username"
                   className="login-signup-inputs"
@@ -75,7 +100,9 @@ export default class Signup extends Component {
                 />
               </div>
               <div className="input-label">
-                <label htmlFor="password">Password <span className='required'>&#42;</span></label>
+                <label htmlFor="password">
+                  Password <span className="required">&#42;</span>
+                </label>
                 <input
                   id="password"
                   className="login-signup-inputs"
@@ -95,12 +122,20 @@ export default class Signup extends Component {
                 />
               </div>
               <div className="input-label">
-                <label htmlFor="Name">Name <span className='required'>&#42;</span></label>
-                <input id="name" className="login-signup-inputs" name="name" 
-                  placeholder="Hi, what's your name?" />
+                <label htmlFor="Name">
+                  Name <span className="required">&#42;</span>
+                </label>
+                <input
+                  id="name"
+                  className="login-signup-inputs"
+                  name="name"
+                  placeholder="Hi, what's your name?"
+                />
               </div>
               <div className="input-label">
-                <label htmlFor="dob">Date of Birth <span className='required'>&#42;</span></label>
+                <label htmlFor="dob">
+                  Date of Birth <span className="required">&#42;</span>
+                </label>
                 <input
                   id="dob"
                   className="login-signup-inputs"
@@ -109,7 +144,6 @@ export default class Signup extends Component {
                 />
               </div>
               <button>Signup</button>
-              <Link to="/Demo">Demo</Link>
             </form>
           </div>
         </div>
