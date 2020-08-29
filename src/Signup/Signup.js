@@ -64,7 +64,7 @@ export default class Signup extends Component {
   };
   render() {
     renderLogin = () => {
-      userCreated ? (
+      this.state.userCreated ? (
         <Link to="Login">Login</Link>
       ) : (
         <Link to="/Demo">Demo</Link>
@@ -73,7 +73,7 @@ export default class Signup extends Component {
     return (
       <div className="background">
         <div className="vertical-elements">
-          {renderLogin}
+          {this.renderLogin}
           <h2 className="login-signup-header">Signup</h2>
           <div className="centered-form">
             <form onSubmit={this.signupUser} className="credentials-box">
