@@ -6,10 +6,12 @@ export default class Login extends Component {
   static contextType = UserContext;
   render() {
     const renderDemoOrUser = this.context.name ? (
-      <p>
-        Hey {this.context.name},&ensp;
-        <Link to="/Demo">go to your logs</Link>
-      </p>
+      <div className='articles-link' >
+        <p>
+          Hey {this.context.name},&ensp;
+          <Link to="/Demo">go to your logs</Link>
+        </p>
+      </div>
     ) : (
       <Link to="/Demo">Demo</Link>
     );
