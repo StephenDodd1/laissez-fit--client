@@ -63,13 +63,11 @@ export default class Signup extends Component {
     });
   };
   render() {
-    renderLogin = () => {
-      this.state.userCreated ? (
-        <Link to="Login">Login</Link>
-      ) : (
-        <Link to="/Demo">Demo</Link>
-      );
-    };
+    const renderLogin = this.state.userCreated ? (
+      <Link to="Login">Login</Link>
+    ) : (
+      <Link to="/Demo">Demo</Link>
+    );
     return (
       <div className="background">
         <div className="vertical-elements">
