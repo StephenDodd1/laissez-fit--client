@@ -79,7 +79,7 @@ export default class Signup extends Component {
             <form onSubmit={this.signupUser} className="credentials-box">
               <div className="input-label">
                 <label htmlFor="email">
-                  Email <span className="required">&#42;</span>
+                  Email
                 </label>
                 <input
                   id="email"
