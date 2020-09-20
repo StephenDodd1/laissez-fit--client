@@ -31,7 +31,7 @@ export default class Signup extends Component {
       return alert("All fields are required");
     } else if (!this.emailRegExp(email)) {
       return alert("Plese enter a valid email address");
-    } else if (password.length < 9) {
+    } else if (password.length < 8) {
       return alert("Password must be atleast 8 characters");
     } else if (name.length < 2) {
       return alert("Name must be at least 2 characters");
