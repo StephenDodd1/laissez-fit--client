@@ -56,7 +56,7 @@ export default class Signup extends Component {
       body: JSON.stringify(user),
     }).then((res) => {
       if (!res.ok) {
-        return alert("Something went wrong.");
+        return alert(res.error.message);
       }
       this.setState({ userCreated: true });
       return res.json();
