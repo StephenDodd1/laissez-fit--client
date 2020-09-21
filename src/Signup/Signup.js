@@ -54,18 +54,26 @@ export default class Signup extends Component {
         "Content-type": "application/json",
       },
       body: JSON.stringify(user),
-    }).then((res) => {
-      if (!res.ok) {
-        res.json().then(jsonResponseObj => alert(jsonResponseObj.error))
-      }
-      this.setState({ userCreated: true });
-      return res.json();
-    });
+    })
+      .then((res) => {
+        if (!res.ok) {
+          res.json(); //.then(jsonResponseObj => alert(jsonResponseObj.error))
+        } else {
+          res.json();
+          this.setState({ userCreated: true });
+        }
+      })
+      .then((response) => {
+        if (response.error) {
+          return alert(response.error);
+        }
+        else return response.json()
+      });
   };
   render() {
     const renderLogin = this.state.userCreated ? (
-      <div className='articles-link' >
-      <Link to="Login">Login</Link>
+      <div className="articles-link">
+        <Link to="Login">Login</Link>
       </div>
     ) : (
       <Link to="/Demo">Demo</Link>
