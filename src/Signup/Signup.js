@@ -65,7 +65,7 @@ export default class Signup extends Component {
       })
       .then((response) => {
         if (response.error) {
-          return alert(response.error);
+          return console.log(response.json());
         }
         else return response.json()
       });
