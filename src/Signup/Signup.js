@@ -63,9 +63,10 @@ export default class Signup extends Component {
         }
       })
       .then(response => {
-        if(response.error){
-          alert(response.error)
+        if(!response.error){
+          alert('Click the link above to login')
         }
+        else return response.error
       });
   };
   render() {
