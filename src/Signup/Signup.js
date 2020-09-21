@@ -63,7 +63,9 @@ export default class Signup extends Component {
         }
       })
       .then((response) => {
-        alert(response);
+        if(response !== undefined){
+          alert(response);
+        }
       });
   };
   render() {
