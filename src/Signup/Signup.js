@@ -64,7 +64,7 @@ export default class Signup extends Component {
       })
       .then((response) => {
         if(response !== undefined){
-          alert(response);
+          alert(response.error);
         }
       });
   };
