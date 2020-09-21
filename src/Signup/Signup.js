@@ -60,14 +60,12 @@ export default class Signup extends Component {
           return res.json(); //.then(jsonResponseObj => alert(jsonResponseObj.error))
         } else {
           this.setState({ userCreated: true });
-          return res.json();
         }
       })
       .then(response => {
         if(response.error){
           alert(response.error)
         }
-        else alert(response)
       });
   };
   render() {
