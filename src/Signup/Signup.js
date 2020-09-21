@@ -56,8 +56,7 @@ export default class Signup extends Component {
       body: JSON.stringify(user),
     }).then((res) => {
       if (!res.ok) {
-        let response = res.json();
-        return console.log(response)
+        res.json().then(jsonResponseObj => console.log(jsonResponseObj))
       }
       this.setState({ userCreated: true });
       return res.json();
