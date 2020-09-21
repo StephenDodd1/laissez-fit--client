@@ -66,6 +66,7 @@ export default class Signup extends Component {
         if(response !== undefined){
           alert(response.error);
         }
+        else alert('Click the login link above to login')
       });
   };
   render() {
