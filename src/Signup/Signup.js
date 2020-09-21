@@ -64,7 +64,7 @@ export default class Signup extends Component {
         }
       })
       .then((response) => {
-        console.log(response.json())
+        console.log(response)
       });
   };
   render() {
