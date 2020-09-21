@@ -64,7 +64,10 @@ export default class Signup extends Component {
         }
       })
       .then(response => {
-        console.log(response)
+        if(response.error){
+          alert(response.error)
+        }
+        else alert(response)
       });
   };
   render() {
