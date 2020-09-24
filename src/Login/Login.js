@@ -25,6 +25,7 @@ export default class Login extends Component {
               <form
                 className="credentials-box"
                 onSubmit={this.props.submitLogin}
+                id='login-form'
               >
                 <div className="input-label">
                   <label htmlFor="username">Username</label>
