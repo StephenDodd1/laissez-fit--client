@@ -69,7 +69,8 @@ export default class Tracking extends Component {
           <div id="tracking-submit-container">
             <button type="submit" id="tracking-submit">
               <i className="fa fa-upload"></i>
-            </button>
+            </button><br/>
+            <p>Upload here</p>
           </div>
           <div id="tracking-column-container">
             <div id="fitness-container" className="fitness-container">
