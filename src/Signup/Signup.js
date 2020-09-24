@@ -66,7 +66,10 @@ export default class Signup extends Component {
         if(response !== undefined){
           alert(response.error);
         }
-        else alert('Click the login link above to login')
+        else {
+          document.getElementById("signup-form").reset();
+          alert('Click the login link above to login')
+        }
       });
   };
   render() {
@@ -83,7 +86,7 @@ export default class Signup extends Component {
           {renderLogin}
           <h2 className="login-signup-header">Signup</h2>
           <div className="centered-form">
-            <form onSubmit={this.signupUser} className="credentials-box">
+            <form id='signup-form' onSubmit={this.signupUser} className="credentials-box">
               <div className="input-label">
                 <label htmlFor="email">
                   Email <span className="required">&#42;</span>
