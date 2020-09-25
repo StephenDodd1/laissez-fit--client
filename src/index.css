@@ -31,6 +31,11 @@ header {
   height: 300px;
   width: 100%;
 }
+#articles-footer {
+  display: block;
+  height: 300px;
+  width: 100%;
+}
 .link,
 .links {
   margin-top: 40px;
