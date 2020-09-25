@@ -55,11 +55,12 @@ export default class Articles extends Component {
       </li>
     ));
     return (
+      <>
       <div id="articles-container">
         <div className="articles-link">
           <Link to="Demo">Tracking</Link>
         </div>
-        <div id="article-column-container" className='articles-elements'>
+        <div id="article-column-container">
           <div>
             <h3>Fitness</h3>
             <ul>{fitnessArticlesList}</ul>
@@ -73,8 +74,9 @@ export default class Articles extends Component {
             <ul>{metricsArticlesList}</ul>
           </div>
         </div>
-        <div id='articles-footer' className='background'></div>
       </div>
+      <div id='articles-footer' className='background'></div>
+      </>
     );
   }
 }

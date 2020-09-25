@@ -224,6 +224,8 @@ button {
 }
 #article-column-container {
   padding-left: 50px;
+}
+#articles-container {
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
 }
