@@ -73,7 +73,7 @@ export default class Articles extends Component {
             <ul>{metricsArticlesList}</ul>
           </div>
         </div>
-        <div id='articles-footer'></div>
+        <div id='articles-footer' className='background'></div>
       </div>
     );
   }
