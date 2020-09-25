@@ -27,7 +27,7 @@ class App extends Component {
     this.setState({ user: {} });
   }
   login(userid) {
-    document.getElementById("signup-form").reset();
+    document.getElementById("login-form").reset();
     this.setState({ user_id: userid });
   }
   setUsername(username) {
