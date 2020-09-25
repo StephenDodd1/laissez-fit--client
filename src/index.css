@@ -33,7 +33,7 @@ header {
 }
 #articles-footer {
   display: block;
-  height: 90%;
+  height: 400px;
   width: 100%;
 }
 .link,
@@ -99,6 +99,10 @@ h1 {
   justify-content: center;
   width: 600px;
   margin: auto;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.articles-elements {
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
 }
