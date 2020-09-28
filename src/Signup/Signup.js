@@ -122,9 +122,9 @@ export default class Signup extends Component {
                 />
               </div>
               <div className="input-label">
-                <label htmlFor="confirm-password">Confirm Password</label>
+                <label htmlFor="confirm-password">Confirm <span className="required">&#42;</span></label>
                 <input
-                  id="confirm password"
+                  id="confirm"
                   className="login-signup-inputs"
                   type="password"
                   name="confirm"
@@ -144,7 +144,7 @@ export default class Signup extends Component {
               </div>
               <div className="input-label">
                 <label htmlFor="dob">
-                  Date of Birth <span className="required">&#42;</span>
+                  Birthday <span className="required">&#42;</span>
                 </label>
                 <input
                   id="dob"

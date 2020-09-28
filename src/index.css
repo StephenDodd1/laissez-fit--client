@@ -65,8 +65,8 @@ header {
   margin-top: -20px;
 }
 .login-signup-header {
-  width: 150px;
-  padding-left: 100px;
+  width: 100px;
+  padding-left: 50px;
   margin-left: 100px;
 }
 h1 {
@@ -97,7 +97,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 600px;
+  width: 320px;
   margin: auto;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
@@ -109,7 +109,7 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 550px;
+  width: 320px;
   height: 100%;
   margin: auto;
 }
@@ -121,7 +121,7 @@ p {
 }
 label {
   display: inline-block;
-  width: 200px;
+  width: 110px;
   margin-right: 10px;
   font-size: 18px;
   padding-right: 15px;
@@ -153,11 +153,7 @@ input {
   height: 30px;
   width: 230px;
 }
-.input-label {
-  display: inline-block;
-  margin-bottom: 8px;
-  width: 500px;
-}
+
 button {
   width: 75px;
   height: 30px;
@@ -284,7 +280,17 @@ button {
 #landing-box {
   padding: 20px;
 }
+.login-signup-inputs{
+  width: 150px;
+}
 @media screen and (min-width: 700px) {
+  .login-signup-header {
+    width: 100px;
+    margin-left: -50px;
+  }
+  .vertical-elements{
+    width: 600px;
+  }
   header {
     background-size: 100% 100%;
     margin: -10px;
@@ -327,6 +333,11 @@ button {
   }
   #article-column-container {
     padding-left: 150px;
+  }
+  .input-label {
+    display: inline-block;
+    margin-bottom: 8px;
+    width: 500px;
   }
 }
 @media screen and (min-width: 1000px) {

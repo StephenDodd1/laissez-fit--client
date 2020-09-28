@@ -2,6 +2,10 @@
 
 This site can be used as login user1 and password abc for testing
 
+# Live App
+
+https://laissez-fit-client.vercel.app/
+
 ## Introduction
 
 This site is dedicated to lazy fitness. The idea is that we live in a lazy world
