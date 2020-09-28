@@ -43,13 +43,13 @@ export default class Comments extends Component {
   render() {
     return (
       <div id='comments-container'>
-        <h3>Comments <Link to={`/Comment/${window.location.pathname.split('/')[2]}`} id="fa-plus" className="fa fa-plus"></Link></h3>
+        <h3>Comments <Link to={`/Comment/${window.location.pathname.split('/')[2]}`} id="fa-plus" className="fa fa-plus" aria-label='add comment'></Link></h3>
         {this.state.comments.map((comment, i) => {
           return (
             <div className='comment-box' key={i}>
               <h4>Posted by: <span className='username'>{comment.username}</span></h4>
               <p>{comment.comment}</p>
-              <button id='trash-button' onClick={this.deleteComment} value={comment.comment_id} className="fa fa-trash"></button>
+              <button id='trash-button' aria-label='delete button' onClick={this.deleteComment} value={comment.comment_id} className="fa fa-trash"></button>
             </div>
           );
         })}
