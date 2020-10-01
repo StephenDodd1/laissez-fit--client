@@ -33,7 +33,7 @@ You can track your vital statistics, that means blood sugar, resting heart rate,
 
 ## Stack
 
-React/JS/JSX/JSON
+:atom: React/JS/JSX/JSON 
 
 ## Screenshots
 
