@@ -1,6 +1,6 @@
 # Laissez.fit Client
 
-This site can be used as login user1 and password abc for testing
+For testing, use the login test01 and password tester01 for testing
 
 # Live App
 
@@ -19,6 +19,8 @@ with Laissez.fit. You can log sleep, mood, activities, steps and diary. You can
 track your vital statistics, that means blood sugar, resting heart rate, 
 maximum heart rate, blood pressure, weight and even height. You can update your 
 macro nutrients and calories throughout the day as well. Each time you update the values, the old values will disappear. For example, if today, you logged your maximum heart rate at 9 am and it was 124, then at 3pm you found it was 145, when you update it to 145, the old value of 124 is gone. 
+
+:1234:	The API is setup to take numbers for the numerical data points, but will take and remove values with non-numerical characters.
 
 The endpoints to the API are users, tracking, articles and comments.
 
