@@ -8,9 +8,7 @@
 
 ## Introduction
 
-:relaxed:  - You can relax, this site is dedicated to lazy fitness. The idea is that we live in a lazy world
-and if we would do things differently, we might be healthier without all the 
-work that we generally associate with getting healthier.
+:relaxed:  - You can relax, this site is dedicated to lazy fitness. The idea is that we live in a lazy world, but if we  do things a little differently, we might be healthier without all the work that we generally associate with getting healthier. :lotus_position:
 
 ## Usage
 
