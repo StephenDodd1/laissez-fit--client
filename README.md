@@ -31,7 +31,7 @@ You can track your vital statistics, that means blood sugar, resting heart rate,
 
 :left_speech_bubble:  - There is a comment component is to add a comment, while the comments component displays the comments of a chosen article.
 
-The endpoints to the API are users, tracking, articles and comments.
+:eight_spoked_asterisk:  - The endpoints to the API are users, tracking, articles and comments.
 
 ## Stack
 
