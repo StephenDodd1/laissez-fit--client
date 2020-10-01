@@ -8,7 +8,7 @@
 
 ## Introduction
 
-This site is dedicated to lazy fitness. The idea is that we live in a lazy world
+:relaxed:  - You can relax, this site is dedicated to lazy fitness. The idea is that we live in a lazy world
 and if we would do things differently, we might be healthier without all the 
 work that we generally associate with getting healthier.
 
