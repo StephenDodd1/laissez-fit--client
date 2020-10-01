@@ -4,7 +4,7 @@ For testing, use the login test01 and password tester01 for testing
 
 # Live App
 
-https://laissez-fit-client.vercel.app/
+:zap: https://laissez-fit-client.vercel.app/ :zap:
 
 ## Introduction
 
@@ -25,6 +25,8 @@ macro nutrients and calories throughout the day as well. Each time you update th
 :arrows_counterclockwise:  - Reloading will logout the user. For that, Navigation is very simple. There are 4 screens, outside of the login and signup pages. These include Tracking and Articles. Articles is a list of titles, which can be opened, each of which includes navigation to add a comment on the comment page.
 
 :white_check_mark:  - Previously submitted days are updated with a PATCH request, which are otherwise submitted with a POST request.
+
+:left_speech_bubble:  - There is a comment component is to add a comment, while the comments component displays the comments of a chosen article.
 
 The endpoints to the API are users, tracking, articles and comments.
 
