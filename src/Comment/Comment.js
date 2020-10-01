@@ -27,7 +27,7 @@ export default class Comment extends Component {
         <form onSubmit={this.submitComment}>
           <h3>Comment</h3>
           <input type="hidden" value={this.context.user_id} />
-          <label id='comment-label' htmlFor='comment-text'>Type your comment below:</label>
+          <label id='comment-label' htmlFor="comment-text">Type your comment below:</label>
           <textarea id="comment-text" name="content"/>
           <button type="submit">Submit</button>
         </form>
