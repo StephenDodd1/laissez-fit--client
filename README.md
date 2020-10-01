@@ -1,6 +1,6 @@
 # Laissez.fit Client
 
-For testing, use the login test01 and password tester01 for testing
+For testing, use the :closed_lock_with_key: username: test01 and password: tester01 for testing
 
 # Live App
 
