@@ -11,8 +11,8 @@
 .App {
   background: black;
   margin: -20px;
-  margin-right: 40px;
-  width: 120%;
+  margin-right: 0px;
+  width: 110%;
 }
 body {
   background-color: black;
