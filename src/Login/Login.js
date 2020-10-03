@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { UserContext } from "../context";
 
-export default class Login extends Component {
+class Login extends Component {
   static contextType = UserContext;
   render() {
     const renderDemoOrUser = this.context.name ? (
@@ -49,3 +49,5 @@ export default class Login extends Component {
     );
   }
 }
+
+export default withRouter(Login)
