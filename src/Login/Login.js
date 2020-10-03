@@ -4,9 +4,14 @@ import { UserContext } from "../context";
 
 class Login extends Component {
   static contextType = UserContext;
+
+  onLoginSuccess() {
+    return this.props.history.push("/Tracking")
+  }
+
   render() {
-    const renderDemoOrUser = this.context.name ? (
-      this.props.history.push("/Tracking")
+    this.context.name ? (
+      this.onLoginSuccess()
     ) : (
       <Link to="/Demo">Demo</Link>
     );
