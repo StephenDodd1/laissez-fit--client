@@ -2,6 +2,9 @@
   font-family: "Lucida Console", Monaco, monospace;
   background: moccasin;
 }
+#root {
+  background: black
+}
 .required {
   color: red;
 }
