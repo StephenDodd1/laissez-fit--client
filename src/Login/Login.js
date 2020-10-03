@@ -5,10 +5,9 @@ import { UserContext } from "../context";
 class Login extends Component {
   static contextType = UserContext;
 
-  onLoginSuccess() {
+  onLoginSuccess = () => {
     return this.props.history.push("/Tracking")
-  }
-
+  };
   render() {
     this.context.name ? (
       this.onLoginSuccess()
