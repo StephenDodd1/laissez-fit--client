@@ -63,7 +63,7 @@ class App extends Component {
         this.login(data.data.user.id);
         this.setUsername(data.data.user.username);
         this.setUserName(data.data.user.name);
-        this.props.history.push("/Demo");
+        <Redirect to="/Demo" />;
       });
   };
   render() {
