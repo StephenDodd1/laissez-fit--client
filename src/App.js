@@ -63,9 +63,8 @@ class App extends Component {
         this.login(data.data.user.id);
         this.setUsername(data.data.user.username);
         this.setUserName(data.data.user.name);
-        this.props.history.push("/Demo"))
-      })
-  };
+        return this.props.history.push("/Tracking");
+      });
   render() {
     const renderLoginOrLogout =
       this.state.user_id !== null ? (
