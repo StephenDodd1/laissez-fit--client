@@ -6,7 +6,7 @@ export default class Login extends Component {
   static contextType = UserContext;
   render() {
     const renderDemoOrUser = this.context.name ? (
-      this.props.history.push("/Demo")
+      this.props.history.push("/Tracking")
     ) : (
       <Link to="/Demo">Demo</Link>
     );
