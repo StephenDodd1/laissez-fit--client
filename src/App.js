@@ -67,6 +67,17 @@ class App extends Component {
       .then((res) => this.props.history.push("/Demo"));
   };
   render() {
+    const renderLoginOrLogout =
+      this.state.user_id !== null ? (
+        <div className="link">
+          <a href="Logout">logout</a>
+        </div>
+      ) : (
+        <div className="links">
+          <Link to="/Login">login</Link>
+          <Link to="/Signup">signup</Link>
+        </div>
+      );
     const value = {
       user_id: this.state.user_id,
       username: this.state.username,
