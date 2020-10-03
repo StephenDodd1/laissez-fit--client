@@ -5,21 +5,10 @@ import { UserContext } from "../context";
 export default class Login extends Component {
   static contextType = UserContext;
   render() {
-    const renderDemoOrUser = this.context.name ? (
-      <div className="articles-link">
-        <p>
-          Hey {this.context.name},&ensp;
-          <Link to="/Demo">go to your logs</Link>
-        </p>
-      </div>
-    ) : (
-      <Link to="/Demo">Demo</Link>
-    );
     return (
       <div>
         <div className="background">
           <div className="vertical-elements">
-            {renderDemoOrUser}
             <h2 className="login-signup-header">Login</h2>
             <div className="centered-form">
               <form
