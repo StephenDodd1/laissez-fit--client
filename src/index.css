@@ -288,6 +288,9 @@ button {
 .login-signup-inputs{
   width: 150px;
 }
+.fitness-container {
+  width: 300px;
+}
 @media screen and (min-width: 700px) {
   .login-signup-header {
     width: 100px;
@@ -317,7 +320,7 @@ button {
     justify-content: space-evenly;
   }
   .fitness-container {
-    width: 28%;
+    width: 30%;
   }
   .metrics-labels {
     text-align: left;
