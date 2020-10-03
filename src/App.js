@@ -13,6 +13,11 @@ import config from "./config.js";
 import { UserContext } from "./context";
 
 class App extends Component {
+  static defaultProps = {
+    history: {
+      push: () => {},
+    }
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -63,7 +68,7 @@ class App extends Component {
         this.login(data.data.user.id);
         this.setUsername(data.data.user.username);
         this.setUserName(data.data.user.name);
-        <Redirect to="/Demo" />;
+        this.props.history.push("/Demo");
       });
   };
   render() {
