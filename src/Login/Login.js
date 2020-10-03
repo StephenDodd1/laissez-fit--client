@@ -10,7 +10,7 @@ class Login extends Component {
   };
   render() {
     this.context.name ? (
-      this.onLoginSuccess()
+      onLoginSuccess()
     ) : (
       <Link to="/Demo">Demo</Link>
     );
