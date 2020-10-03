@@ -9,11 +9,9 @@ class Login extends Component {
     return this.props.history.push("/Tracking")
   };
   render() {
-    this.context.name ? (
-      this.onLoginSuccess()
-    ) : (
-      <Link to="/Demo">Demo</Link>
-    );
+    if(this.context.name){
+      this.onLoginSuccess() 
+    }
     return (
       <div>
         <div className="background">
