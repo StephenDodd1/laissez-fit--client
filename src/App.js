@@ -69,7 +69,6 @@ class App extends Component {
         this.setUsername(data.data.user.username);
         this.setUserName(data.data.user.name);
       })
-      .then(res => this.props.history.push("/Demo"))
   };
   render() {
     const renderLoginOrLogout =

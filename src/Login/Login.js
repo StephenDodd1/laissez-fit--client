@@ -5,6 +5,11 @@ import { UserContext } from "../context";
 export default class Login extends Component {
   static contextType = UserContext;
   render() {
+    const renderDemoOrUser = this.context.name ? (
+      this.props.history.push("/Demo")
+    ) : (
+      <Link to="/Demo">Demo</Link>
+    );
     return (
       <div>
         <div className="background">
