@@ -133,7 +133,8 @@ label {
   text-align: right;
 }
 .metrics-labels {
-  text-align: right;
+  text-align: center;
+  width: 200px;
 }
 .links > a:visited,
 .link > a:visited {
