@@ -6,7 +6,7 @@ class Login extends Component {
   static contextType = UserContext;
 
   onLoginSuccess = () => {
-    return this.props.history.push("/Tracking")
+    return this.props.history.push("/Demo")
   };
   render() {
     if(this.context.name){
