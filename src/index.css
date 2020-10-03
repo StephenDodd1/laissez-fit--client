@@ -8,6 +8,7 @@
 .App {
   background: black;
   margin: -20px;
+  width: 100%;
 }
 body {
   background-color: black;
