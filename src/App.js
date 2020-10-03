@@ -7,7 +7,7 @@ import Demo from "./Demo/Demo";
 import Tracking from "./Tracking/Tracking";
 import Articles from "./Articles/Articles";
 import Article from "./Article/Article";
-import Comment from "./Comment/Comment"
+import Comment from "./Comment/Comment";
 import { Route, Link, Switch, Redirect } from "react-router-dom";
 import config from "./config.js";
 import { UserContext } from "./context";
@@ -49,12 +49,12 @@ class App extends Component {
       headers: {
         "Content-type": "application/json",
         Authorization: `basic ${userToken}`,
-      }
+      },
     })
       .then((res) => {
         if (!res.ok) {
-          console.log('res from submitLogin',res)
-          throw new Error({ error: { message: "login failed" }});
+          console.log("res from submitLogin", res);
+          throw new Error({ error: { message: "login failed" } });
         }
         return res.json();
       })
@@ -63,8 +63,9 @@ class App extends Component {
         this.login(data.data.user.id);
         this.setUsername(data.data.user.username);
         this.setUserName(data.data.user.name);
-        return this.props.history.push("/Tracking");
+        this.props.history.push("/Demo");
       });
+  };
   render() {
     const renderLoginOrLogout =
       this.state.user_id !== null ? (
@@ -123,7 +124,10 @@ class App extends Component {
                     />
                     <Route path="/Articles" render={() => <Articles />} />
                     <Route path="/Article" render={() => <Article />} />
-                    <Route path="/Comment" render={() => <Comment user_id={user_id}/>} />
+                    <Route
+                      path="/Comment"
+                      render={() => <Comment user_id={user_id} />}
+                    />
                   </>
                 );
               }}
