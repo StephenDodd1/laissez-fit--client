@@ -62,7 +62,10 @@ class Track extends Component {
         if(metrics[met] !== null){
           break;
         }
-        else return alert('Your tracker is empty.');
+        else {
+          console.log('else statement ran on track')
+          return alert('Your tracker is empty.');
+        }
       }
       const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`;
       fetch(URL, {
