@@ -161,6 +161,7 @@ class Track extends Component {
     }
   };
   render() {
+    document.getElementById("tracking-metrics").reset()
     return (
       <div id="tracking-container">
         <form onSubmit={this.submitTracking} id="tracking-metrics">
