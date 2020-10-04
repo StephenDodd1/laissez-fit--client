@@ -15,7 +15,7 @@ export default class Tracking extends Component {
 
   updateTracking = (e) => {
     e.preventDefault();
-    const tracking_id = this.state.tracking.id
+    const tracking_id = this.state.tracking.id;
     const t = e.target;
     let slp = parseInt(t.slp.value);
     let men = t.men.value;
@@ -35,17 +35,32 @@ export default class Tracking extends Component {
     let lbs = parseInt(t.lbs.value);
     let ins = parseInt(t.ins.value);
     const metrics = {
-      tracking_id, slp, men, act, stp, dia,
-      cal, fat, car, fib, pro, rhr,
-      mhr, bps, bpd, bls, lbs, ins
-    }
+      tracking_id,
+      slp,
+      men,
+      act,
+      stp,
+      dia,
+      cal,
+      fat,
+      car,
+      fib,
+      pro,
+      rhr,
+      mhr,
+      bps,
+      bpd,
+      bls,
+      lbs,
+      ins,
+    };
 
     const a = this.props;
-      const m =
-        a.month === 10 || a.month === 11 || a.month === 12
-          ? a.month
-          : "0" + a.month;
-    const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`
+    const m =
+      a.month === 10 || a.month === 11 || a.month === 12
+        ? a.month
+        : "0" + a.month;
+    const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`;
     fetch(URL, {
       method: "PATCH",
       mode: "cors",
@@ -53,23 +68,24 @@ export default class Tracking extends Component {
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify(metrics)
+      body: JSON.stringify(metrics),
     })
-    .then(res => res.json())
-    .then(data => alert("Your data has been successfully updated"))
+      .then((res) => res.json())
+      .then((data) => alert("Your data has been successfully updated"))
+      .then((reset) => document.getElementById("tracking-metrics").reset());
   };
   componentDidMount() {
-    document.getElementById("tracking-metrics").reset()
     this.setState({ tracking: this.props.tracking });
   }
   render() {
     return (
-      <div id="tracking-container" >
+      <div id="tracking-container">
         <form onSubmit={this.updateTracking} id="tracking-metrics">
           <div id="tracking-submit-container">
             <button type="submit" id="tracking-submit">
               <i className="fa fa-upload"></i>
-            </button><br/>
+            </button>
+            <br />
             <p>Click above to upload</p>
           </div>
           <div id="tracking-column-container">
