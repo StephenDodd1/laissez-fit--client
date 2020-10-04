@@ -96,8 +96,9 @@ class Track extends Component {
             .then((data) => {
               return this.setState({ tracking: data[0] });
             })
-            .then((reset) => document.getElementById("tracking-metrics").reset());
-            ;
+            .then((reset) =>
+              document.getElementById("tracking-metrics").reset()
+            );
         });
     } else if (this.state.updateMethod === "PATCH") {
       const tracking_id = this.state.tracking.id;
@@ -159,7 +160,7 @@ class Track extends Component {
         }
         res.json();
         return alert("Your data has been successfully updated");
-      })
+      });
     }
   };
   render() {
@@ -169,7 +170,8 @@ class Track extends Component {
           <div id="tracking-submit-container">
             <button type="submit" id="tracking-submit">
               <i className="fa fa-upload"></i>
-            </button><br/>
+            </button>
+            <br />
             <p>Click above to upload</p>
           </div>
           <div id="tracking-column-container">
