@@ -58,8 +58,8 @@ class Track extends Component {
         ins,
       };
       for(let met in metrics){
-        console.log(met)
-        if(met !== null){
+        console.log(metrics.met)
+        if(metrics[met] !== null){
           break;
         }
         else return alert('Your tracker is empty.')
