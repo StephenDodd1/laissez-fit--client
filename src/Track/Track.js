@@ -57,15 +57,16 @@ class Track extends Component {
         lbs,
         ins,
       };
+      let notEmpty = false;
       for(let met in metrics){
         console.log(metrics[met])
         if(metrics[met] !== null && metrics[met] !== NaN){
+          notEmpty = true
           break;
         }
-        else {
-          console.log('else statement ran on track')
-          return alert('Your tracker is empty.');
-        }
+      }
+      if(!notEmpty){
+        return
       }
       const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`;
       fetch(URL, {
