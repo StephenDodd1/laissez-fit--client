@@ -58,7 +58,7 @@ class Track extends Component {
         ins,
       };
       for(let met in metrics){
-        console.log(metrics.met)
+        console.log(metrics[met])
         if(metrics[met] !== null){
           break;
         }
