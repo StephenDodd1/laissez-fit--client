@@ -95,7 +95,9 @@ class Track extends Component {
             .then((res) => res.json())
             .then((data) => {
               return this.setState({ tracking: data[0] });
-            });
+            })
+            .then((reset) => document.getElementById("tracking-metrics").reset());
+            ;
         });
     } else if (this.state.updateMethod === "PATCH") {
       const tracking_id = this.state.tracking.id;
@@ -158,7 +160,6 @@ class Track extends Component {
         res.json();
         return alert("Your data has been successfully updated");
       })
-      .then((reset) => document.getElementById("tracking-metrics").reset());
     }
   };
   render() {
