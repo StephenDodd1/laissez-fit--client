@@ -157,12 +157,10 @@ class Track extends Component {
         }
         res.json();
         return alert("Your data has been successfully updated");
-      });
+      })
+      .then((reset) => document.getElementById("tracking-metrics").reset());
     }
   };
-  componentDidMount() {
-    document.getElementById("tracking-metrics").reset()
-  }
   render() {
     return (
       <div id="tracking-container">
