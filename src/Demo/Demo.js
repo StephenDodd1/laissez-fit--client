@@ -107,6 +107,7 @@ export default class Demo extends Component {
   }
 
   getDay = () => {
+    document.getElementById("tracking-metrics").reset()
     const a = this.state;
     const m =
       a.month === 10 || a.month === 11 || a.month === 12
