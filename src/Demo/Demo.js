@@ -127,7 +127,9 @@ export default class Demo extends Component {
           return this.setState({ tracking: undefined })
         }
         else return this.setState({ tracking: data[0] })
-        }));
+        }))
+      .catch(error => {alert(error.message)});
+
   };
 
   render() {
