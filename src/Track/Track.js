@@ -60,51 +60,52 @@ class Track extends Component {
       for(let met in metrics){
         console.log(metrics[met])
         if(metrics[met] !== null){
+          break;
+        }
+        else return alert('Your tracker is empty.');
+      }
+      const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`;
+      fetch(URL, {
+        method: "POST",
+        mode: "cors",
+        credentials: "same-origin",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(metrics),
+      })
+        .then((res) => {
+          if (!res.ok) {
+            alert("Something went wrong. Try again later.");
+          }
+          return res.json();
+        })
+        .then((data) => {
+          this.setState({ updateMethod: "PATCH" });
+          return alert("Your data has successfully posted");
+        })
+        .then((get) => {
+          const a = this.props;
+          const m =
+            a.month === 10 || a.month === 11 || a.month === 12
+              ? a.month
+              : "0" + a.month;
           const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`;
           fetch(URL, {
-            method: "POST",
+            method: "GET",
             mode: "cors",
             credentials: "same-origin",
             headers: {
               "Content-type": "application/json",
             },
-            body: JSON.stringify(metrics),
           })
-            .then((res) => {
-              if (!res.ok) {
-                alert("Something went wrong. Try again later.");
-              }
-              return res.json();
-            })
+            .then((res) => res.json())
             .then((data) => {
-              this.setState({ updateMethod: "PATCH" });
-              return alert("Your data has successfully posted");
+              return this.setState({ tracking: data[0] });
             })
-            .then((get) => {
-              const a = this.props;
-              const m =
-                a.month === 10 || a.month === 11 || a.month === 12
-                  ? a.month
-                  : "0" + a.month;
-              const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`;
-              fetch(URL, {
-                method: "GET",
-                mode: "cors",
-                credentials: "same-origin",
-                headers: {
-                  "Content-type": "application/json",
-                },
-              })
-                .then((res) => res.json())
-                .then((data) => {
-                  return this.setState({ tracking: data[0] });
-                })
-                .then((reset) =>
-                  document.getElementById("tracking-metrics").reset()
-                );        }
-        else return alert('Your tracker is empty.')
-      }
-      
+            .then((reset) =>
+              document.getElementById("tracking-metrics").reset()
+            );
         });
     } else if (this.state.updateMethod === "PATCH") {
       const tracking_id = this.state.tracking.id;
