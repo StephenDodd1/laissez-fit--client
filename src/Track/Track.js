@@ -171,7 +171,8 @@ class Track extends Component {
         }
         res.json();
         return alert("Your data has been successfully updated");
-      });
+      })
+      .catch(error => {alert(error.message)});
     }
   };
   render() {
