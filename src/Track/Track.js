@@ -160,8 +160,10 @@ class Track extends Component {
       });
     }
   };
-  render() {
+  componentDidMount() {
     document.getElementById("tracking-metrics").reset()
+  }
+  render() {
     return (
       <div id="tracking-container">
         <form onSubmit={this.submitTracking} id="tracking-metrics">

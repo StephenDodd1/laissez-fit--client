@@ -59,10 +59,10 @@ export default class Tracking extends Component {
     .then(data => alert("Your data has been successfully updated"))
   };
   componentDidMount() {
+    document.getElementById("tracking-metrics").reset()
     this.setState({ tracking: this.props.tracking });
   }
   render() {
-    document.getElementById("tracking-metrics").reset()
     return (
       <div id="tracking-container" >
         <form onSubmit={this.updateTracking} id="tracking-metrics">
