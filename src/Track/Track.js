@@ -59,7 +59,7 @@ class Track extends Component {
       };
       for(let met in metrics){
         console.log(metrics[met])
-        if(metrics[met] !== null){
+        if(metrics[met] !== null || metrics[met] === NaN){
           break;
         }
         else {
