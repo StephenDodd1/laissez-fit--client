@@ -124,7 +124,7 @@ export default class Demo extends Component {
       .then((res) => res.json()
       .then((data) => {
         if(res.status === 404) {
-          alert(error.message)
+          alert(res.message)
           return this.setState({ tracking: undefined })
         }
         else return this.setState({ tracking: data[0] })
