@@ -57,6 +57,13 @@ class Track extends Component {
         lbs,
         ins,
       };
+      for(let met in metrics){
+        console.log(met)
+        if(met !== null){
+          break;
+        }
+        else return alert('Your tracker is empty.')
+      }
       const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`;
       fetch(URL, {
         method: "POST",
