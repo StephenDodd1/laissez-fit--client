@@ -127,7 +127,7 @@ class App extends Component {
                       render={() => <Tracking user_id={user_id} />}
                     />
                     <Route path="/Articles" render={() => <Articles />} />
-                    <Route path="/Article" render={() => <Article />} />
+                    <Route path="/Article/:id" render={() => <Article />} />
                     <Route
                       path="/Comment"
                       render={() => <Comment user_id={user_id} />}
