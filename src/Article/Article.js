@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import Comments from "../Comments/Comments";
 import config from "../config";
 import { Link } from "react-router-dom";
+
 export default class Article extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      article: [],
-      articleId: null,
+      article: []
     };
   }
 
@@ -15,7 +15,7 @@ export default class Article extends Component {
     console.log('window', window.location.pathname)
     console.log('window', this.props.location.state)
     const URL = `${config.API_URL}/api/article/${
-      window.location.pathname.split("/")[3]
+      window.location.pathname.split("/")[2]
     }`;
     fetch(URL, {
       method: "GET",

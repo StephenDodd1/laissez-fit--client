@@ -37,8 +37,9 @@ export default class Articles extends Component {
           <Link to={{
             pathname: `/Article/${article.articleId}`,
             state: {
-              articleId: article.articleId
-            }}}>{article.title}</Link>
+              articleId: `${article.articleId}`
+            }
+          }}>{article.title}</Link>
         </li>
       );
     });
