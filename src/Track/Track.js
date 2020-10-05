@@ -60,10 +60,11 @@ class Track extends Component {
       let notEmpty = false;
       for(let met in metrics){
         console.log(metrics[met])
-        if(metrics[met] !== null && metrics[met] !== NaN){
+        if(metrics[met] !== '' && metrics[met] !== NaN){
           notEmpty = true
           break;
         }
+        else continue
       }
       if(!notEmpty){
         return
@@ -104,12 +105,12 @@ class Track extends Component {
             },
           })
             .then((res) => res.json())
+            .then((reset) =>
+              document.getElementById("tracking-metrics").reset()
+            )
             .then((data) => {
               return this.setState({ tracking: data[0] });
             })
-            .then((reset) =>
-              document.getElementById("tracking-metrics").reset()
-            );
         });
     } else if (this.state.updateMethod === "PATCH") {
       const tracking_id = this.state.tracking.id;
