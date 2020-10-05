@@ -34,7 +34,7 @@ export default class Articles extends Component {
     const fitnessArticlesList = fitnessArticles.map((article, i) => {
       return (
         <li key={i}>
-          <Link to={`/Article/${article.articleId}`} articleId={article.articleId}>{article.title}</Link>
+          <Link to={`/Article/${article.articleId}`}>{article.title}</Link>
         </li>
       );
     });
