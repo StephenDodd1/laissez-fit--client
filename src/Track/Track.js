@@ -60,7 +60,7 @@ class Track extends Component {
       let notEmpty = false;
       for(let met in metrics){
         console.log(metrics[met])
-        if(metrics[met] !== '' && metrics[met] !== NaN){
+        if(metrics[met] !== '' && metrics[met] != NaN){
           notEmpty = true
           break;
         }
