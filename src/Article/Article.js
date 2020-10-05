@@ -11,7 +11,7 @@ export default class Article extends Component {
   }
 
   componentDidMount() {
-    console.log(match.path)
+    console.log(window.location.pathname)
     const URL = `${config.API_URL}/api/article/${
       window.location.pathname.split("/")[3]
     }`;
