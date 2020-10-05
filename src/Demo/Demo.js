@@ -128,6 +128,7 @@ export default class Demo extends Component {
         }
         else return this.setState({ tracking: data[0] })
         }))
+      .catch(error => error.message)
   };
 
   render() {
