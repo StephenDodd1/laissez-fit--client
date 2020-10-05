@@ -57,17 +57,6 @@ class Track extends Component {
         lbs,
         ins,
       };
-      let notEmpty = false;
-      for(let met in metrics){
-        console.log(metrics[met])
-        if(metrics[met] !== '' && metrics[met] != 'NaN'){
-          notEmpty = true
-          break;
-        }
-      }
-      if(!notEmpty){
-        return
-      }
       const URL = `${config.API_URL}/api/tracking/${this.context.user_id}/${a.year}-${m}-${a.day}`;
       fetch(URL, {
         method: "POST",
