@@ -64,7 +64,6 @@ class Track extends Component {
           notEmpty = true
           break;
         }
-        else continue
       }
       if(!notEmpty){
         return
