@@ -7,6 +7,7 @@ export default class Article extends Component {
     super(props);
     this.state = {
       article: [],
+      articleId: null,
     };
   }
 
