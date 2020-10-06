@@ -58,6 +58,9 @@ header {
   opacity: .84;
 }
 
+#date-outer-container {
+  margin-left: -4%;
+}
 .App-header,
 .link-box,
 #date-outer-container,
