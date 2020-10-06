@@ -181,7 +181,7 @@ class Track extends Component {
               <label className="metrics-labels" htmlFor="slp">
                 Sleep:
               </label>
-              <input
+              <input id = 'slp'
                 name="slp"
                 placeholder="Minutes"
                 className="fitness-inputs"
@@ -189,7 +189,7 @@ class Track extends Component {
               <label className="metrics-labels" htmlFor="men">
                 I feel:
               </label>
-              <input
+              <input id = 'men'
                 name="men"
                 placeholder="Energized, happy"
                 className="fitness-inputs"
@@ -197,7 +197,7 @@ class Track extends Component {
               <label className="metrics-labels" htmlFor="act">
                 Activities:
               </label>
-              <input
+              <input id = 'act'
                 name="act"
                 placeholder="Jacuzzi, laundry"
                 className="fitness-inputs"
@@ -205,7 +205,7 @@ class Track extends Component {
               <label className="metrics-labels" htmlFor="stp">
                 Steps:
               </label>
-              <input
+              <input id = 'stp'
                 name="stp"
                 placeholder="10000 steps"
                 className="fitness-inputs"
@@ -214,6 +214,7 @@ class Track extends Component {
                 Diary:
               </label>
               <textarea
+                id = 'dia'
                 name="dia"
                 placeholder="You can use this space for whatever you'd like"
                 className="fitness-inputs"
@@ -224,7 +225,7 @@ class Track extends Component {
               <label className="metrics-labels" htmlFor="cal">
                 Calories:
               </label>
-              <input
+              <input id = 'cal'
                 name="cal"
                 placeholder="2000 kcal"
                 className="nutrition-inputs"
@@ -232,7 +233,7 @@ class Track extends Component {
               <label className="metrics-labels" htmlFor="fat">
                 Fat:
               </label>
-              <input
+              <input id = 'fat'
                 name="fat"
                 placeholder="44g - 77g"
                 className="nutrition-inputs"
@@ -240,7 +241,7 @@ class Track extends Component {
               <label className="metrics-labels" htmlFor="car">
                 Carbohydrates:
               </label>
-              <input
+              <input id = 'car'
                 name="car"
                 placeholder="225g - 325g"
                 className="nutrition-inputs"
@@ -248,7 +249,7 @@ class Track extends Component {
               <label className="metrics-labels" htmlFor="fib">
                 Fiber:
               </label>
-              <input
+              <input id ='fib'
                 name="fib"
                 placeholder="25g - 30g"
                 className="nutrition-inputs"
@@ -256,7 +257,7 @@ class Track extends Component {
               <label className="metrics-labels" htmlFor="pro">
                 Protein:
               </label>
-              <input
+              <input id = 'pro'
                 name="pro"
                 placeholder="~50g"
                 className="nutrition-inputs"
@@ -267,7 +268,7 @@ class Track extends Component {
               <label className="metrics-labels" htmlFor="rhr">
                 Resting HR:
               </label>
-              <input
+              <input id = 'rhr'
                 name="rhr"
                 placeholder="60 - 100 bpm"
                 className="nutrition-inputs"
@@ -275,7 +276,7 @@ class Track extends Component {
               <label className="metrics-labels" htmlFor="mhr">
                 Maximum HR:
               </label>
-              <input
+              <input id = 'mhr'
                 name="mhr"
                 placeholder="120+ bpm"
                 className="nutrition-inputs"
@@ -283,7 +284,7 @@ class Track extends Component {
               <label className="metrics-labels" htmlFor="bps">
                 Systolic BP:
               </label>
-              <input
+              <input id = 'bps'
                 name="bps"
                 placeholder="~120"
                 className="nutrition-inputs"
@@ -291,7 +292,7 @@ class Track extends Component {
               <label className="metrics-labels" htmlFor="bpd">
                 Diastolic BP:
               </label>
-              <input
+              <input id = 'bpd'
                 name="bpd"
                 placeholder="~80"
                 className="nutrition-inputs"
@@ -299,7 +300,7 @@ class Track extends Component {
               <label className="metrics-labels" htmlFor="bls">
                 Blood Sugar:
               </label>
-              <input
+              <input id = 'bls'
                 name="bls"
                 placeholder="Depends on time"
                 className="nutrition-inputs"
@@ -307,7 +308,7 @@ class Track extends Component {
               <label className="metrics-labels" htmlFor="lbs">
                 Weight:
               </label>
-              <input
+              <input id = 'lbs'
                 name="lbs"
                 placeholder="in pounds"
                 className="nutrition-inputs"
@@ -315,7 +316,7 @@ class Track extends Component {
               <label className="metrics-labels" htmlFor="ins">
                 Height:
               </label>
-              <input
+              <input id = 'ins'
                 name="ins"
                 placeholder="in inches"
                 className="nutrition-inputs"
