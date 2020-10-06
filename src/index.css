@@ -312,7 +312,8 @@ button {
     display: flex;
     flex-direction: column;
     width: 90%;
-    margin-left: 30px;
+    padding-left:30px;
+    margin: auto;
   }
   #tracking-container {
     display: flex;
