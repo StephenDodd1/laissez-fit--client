@@ -71,7 +71,7 @@ export default class Tracking extends Component {
       body: JSON.stringify(metrics),
     })
       .then((res) => res.json())
-      .then((data) => alert("Your data has been successfully updated"))
+      .then((data) => alert("Your data has been successfully updated"));
   };
   componentDidMount() {
     this.setState({ tracking: this.props.tracking });
@@ -94,6 +94,7 @@ export default class Tracking extends Component {
                 Sleep:
               </label>
               <input
+                id="slp"
                 name="slp"
                 defaultValue={this.props.tracking.slp}
                 placeholder="Minutes"
@@ -103,6 +104,7 @@ export default class Tracking extends Component {
                 I feel:
               </label>
               <input
+                id="men"
                 name="men"
                 defaultValue={this.props.tracking.men}
                 placeholder="Energized, happy"
@@ -112,6 +114,7 @@ export default class Tracking extends Component {
                 Activities:
               </label>
               <input
+                id="act"
                 name="act"
                 defaultValue={this.props.tracking.act}
                 placeholder="Jacuzzi, laundry"
@@ -121,6 +124,7 @@ export default class Tracking extends Component {
                 Steps:
               </label>
               <input
+                id="stp"
                 name="stp"
                 defaultValue={this.props.tracking.stp}
                 placeholder="10000 steps"
@@ -130,6 +134,7 @@ export default class Tracking extends Component {
                 Diary:
               </label>
               <textarea
+                id="dia"
                 name="dia"
                 defaultValue={this.props.tracking.dia}
                 placeholder="You can use this space for whatever you'd like"
@@ -142,6 +147,7 @@ export default class Tracking extends Component {
                 Calories:
               </label>
               <input
+                id="cal"
                 name="cal"
                 defaultValue={this.props.tracking.cal}
                 placeholder="2000 kcal"
@@ -151,6 +157,7 @@ export default class Tracking extends Component {
                 Fat:
               </label>
               <input
+                id="fat"
                 name="fat"
                 defaultValue={this.props.tracking.fat}
                 placeholder="44g - 77g"
@@ -160,6 +167,7 @@ export default class Tracking extends Component {
                 Carbohydrates:
               </label>
               <input
+                id="car"
                 name="car"
                 defaultValue={this.props.tracking.car}
                 placeholder="225g - 325g"
@@ -169,6 +177,7 @@ export default class Tracking extends Component {
                 Fiber:
               </label>
               <input
+                id="fib"
                 name="fib"
                 defaultValue={this.props.tracking.fib}
                 placeholder="25g - 30g"
@@ -178,6 +187,7 @@ export default class Tracking extends Component {
                 Protein:
               </label>
               <input
+                id="pro"
                 name="pro"
                 defaultValue={this.props.tracking.pro}
                 placeholder="~50g"
@@ -190,6 +200,7 @@ export default class Tracking extends Component {
                 Resting HR:
               </label>
               <input
+                id="rhr"
                 name="rhr"
                 defaultValue={this.props.tracking.rhr}
                 placeholder="60 - 100 bpm"
@@ -199,6 +210,7 @@ export default class Tracking extends Component {
                 Maximum HR:
               </label>
               <input
+                id="mhr"
                 name="mhr"
                 defaultValue={this.props.tracking.mhr}
                 placeholder="120+ bpm"
@@ -208,6 +220,7 @@ export default class Tracking extends Component {
                 Systolic BP:
               </label>
               <input
+                id="bps"
                 name="bps"
                 defaultValue={this.props.tracking.bps}
                 placeholder="~120"
@@ -217,6 +230,7 @@ export default class Tracking extends Component {
                 Diastolic BP:
               </label>
               <input
+                id="bpd"
                 name="bpd"
                 defaultValue={this.props.tracking.bpd}
                 placeholder="~80"
@@ -226,6 +240,7 @@ export default class Tracking extends Component {
                 Blood Sugar:
               </label>
               <input
+                id="bls"
                 name="bls"
                 defaultValue={this.props.tracking.bls}
                 placeholder="Depends on time"
@@ -235,6 +250,7 @@ export default class Tracking extends Component {
                 Weight:
               </label>
               <input
+                id="lbs"
                 name="lbs"
                 defaultValue={this.props.tracking.lbs}
                 placeholder="in pounds"
@@ -244,6 +260,7 @@ export default class Tracking extends Component {
                 Height:
               </label>
               <input
+                id="ins"
                 name="ins"
                 defaultValue={this.props.tracking.ins}
                 placeholder="in inches"
