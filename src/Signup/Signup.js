@@ -78,7 +78,7 @@ export default class Signup extends Component {
         <Link to="Login">Login</Link>
       </div>
     ) : (
-      <Link to="/Demo">Demo</Link>
+      <Link to="/Tracker">Tracker</Link>
     );
     return (
       <div className="background">

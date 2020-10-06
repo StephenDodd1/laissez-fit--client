@@ -3,7 +3,7 @@ import logo from "./Laissez-fit.svg";
 import Landing from "./Landing/Landing";
 import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
-import Demo from "./Demo/Demo";
+import Tracker from "./Tracker/Tracker";
 import Tracking from "./Tracking/Tracking";
 import Articles from "./Articles/Articles";
 import Article from "./Article/Article";
@@ -119,8 +119,8 @@ class App extends Component {
                       )}
                     />
                     <Route
-                      path="/Demo"
-                      render={() => <Demo user_id={user_id} />}
+                      path="/Tracker"
+                      render={() => <Tracker user_id={user_id} />}
                     />
                     <Route
                       path="/Tracking"

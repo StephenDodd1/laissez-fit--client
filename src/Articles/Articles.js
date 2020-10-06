@@ -58,7 +58,7 @@ export default class Articles extends Component {
       <>
       <div id="articles-container">
         <div className="articles-link">
-          <Link to="Demo">Tracking</Link>
+          <Link to="Tracker">Tracking</Link>
         </div>
         <div id="article-column-container">
           <div>

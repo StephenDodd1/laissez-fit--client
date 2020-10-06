@@ -20,11 +20,6 @@ export default class Landing extends Component {
           to discover where you stand each day. Monitor your metrics to see that
           you are in the shape you want to be in. Do it the Laissez way.
         </p>
-        <div className="link-box">
-          <div className="demo-link">
-            <Link to="/Demo">demo</Link>
-          </div>
-        </div>
       </div>
     );
   }

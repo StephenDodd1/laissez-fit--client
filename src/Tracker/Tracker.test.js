@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Demo from "./Demo";
+import Tracker from "./Tracker";
 import { BrowserRouter } from "react-router-dom";
 
 describe("demo component", () => {
@@ -8,7 +8,7 @@ describe("demo component", () => {
     const div = document.createElement("div");
     ReactDOM.render(
       <BrowserRouter>
-        <Demo />
+        <Tracker />
       </BrowserRouter>,
       div
     );
