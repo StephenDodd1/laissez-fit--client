@@ -72,7 +72,6 @@ export default class Tracking extends Component {
     })
       .then((res) => res.json())
       .then((data) => alert("Your data has been successfully updated"))
-      .then((reset) => document.getElementById("tracking-metrics").reset());
   };
   componentDidMount() {
     this.setState({ tracking: this.props.tracking });
@@ -91,7 +90,7 @@ export default class Tracking extends Component {
           <div id="tracking-column-container">
             <div id="fitness-container" className="fitness-container">
               <h3>Fitness </h3>
-              <label className="metrics-labels" htmlFor="Sleep">
+              <label className="metrics-labels" htmlFor="slp">
                 Sleep:
               </label>
               <input

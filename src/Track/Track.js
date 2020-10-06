@@ -178,7 +178,7 @@ class Track extends Component {
           <div id="tracking-column-container">
             <div id="fitness-container" className="fitness-container">
               <h3>Fitness </h3>
-              <label className="metrics-labels" htmlFor="Sleep">
+              <label className="metrics-labels" htmlFor="slp">
                 Sleep:
               </label>
               <input

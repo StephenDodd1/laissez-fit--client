@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import config from "../config";
 import { UserContext } from "../context";
 
-export default class Demo extends Component {
+export default class Tracker extends Component {
   constructor(props) {
     super(props);
     this.state = {
