@@ -69,7 +69,7 @@ class Track extends Component {
       })
         .then((res) => {
           if (!res.ok) {
-            alert("Something went wrong. Try again later.");
+            alert("Something went wrong. Ensure that you are logged in, and that you have entered data in at least one field. Otherwise, try again later. ");
           }
           return res.json();
         })
