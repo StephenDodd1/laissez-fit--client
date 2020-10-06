@@ -156,14 +156,14 @@ export default class Tracker extends Component {
         </Link>
         <div id="date-container">
           <i
+            id='back'
             className="fa fa-angle-double-left"
-            aria-hidden="true"
             onClick={this.backOneDay}
           ></i>
           <h2 id="date-element">{`${this.state.month}/${this.state.day}/${this.state.year}`}</h2>
           <i
+            id='forward'
             className="fa fa-angle-double-right"
-            aria-hidden="true"
             onClick={this.forwardOneDay}
           ></i>
           <i onClick={this.getDay} id="fa-search" className="fa fa-search"></i>
