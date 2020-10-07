@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Tracking from "../Tracking/Tracking";
 import Track from "../Track/Track";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import config from "../config";
 import { UserContext } from "../context";
 
