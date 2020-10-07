@@ -123,8 +123,7 @@ export default class Tracker extends Component {
     })
       .then((res) => res.json()
       .then((data) => {
-        if(res.status === 204) {
-          alert(data)
+        if(res.status === 500) {
           return this.setState({ tracking: undefined })
         }
         else return this.setState({ tracking: data[0] })
