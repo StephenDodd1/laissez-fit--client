@@ -294,6 +294,7 @@ button {
 }
 .fitness-container {
   width: 300px;
+  padding-left: 30px;
 }
 @media screen and (min-width: 700px) {
   .login-signup-header {
@@ -312,7 +313,6 @@ button {
     display: flex;
     flex-direction: column;
     width: 90%;
-    padding-left:30px;
     margin: auto;
   }
   #tracking-container {
