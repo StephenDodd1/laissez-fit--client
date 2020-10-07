@@ -4,7 +4,6 @@ import { UserContext } from "../context";
 
 class Login extends Component {
   static contextType = UserContext;
-
   onLoginSuccess = () => {
     return this.props.history.push("/Tracker")
   };

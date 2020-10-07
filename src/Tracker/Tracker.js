@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import config from "../config";
 import { UserContext } from "../context";
 
-export default class Tracker extends Component {
+class Tracker extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,6 +18,9 @@ export default class Tracker extends Component {
   static contextType = UserContext;
 
   backOneDay = () => {
+    if(!this.context.user_id){
+      this.props.history.push('/Login')
+    }
     this.setState({ tracking: null });
     const a = this.state;
     if (a.day === 1) {
@@ -173,3 +176,4 @@ export default class Tracker extends Component {
     );
   }
 }
+export default withRouter(Tracker)
