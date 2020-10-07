@@ -59,6 +59,9 @@ class Tracker extends Component {
     this.getDay();
   };
   forwardOneDay = () => {
+    if(!this.context.user_id){
+      this.props.history.push('/Login')
+    }
     this.setState({ tracking: null });
     const a = this.state;
     if (a.month === 12 && a.day === 31) {
@@ -91,6 +94,9 @@ class Tracker extends Component {
   };
 
   componentDidMount() {
+    if(!this.context.user_id){
+      this.props.history.push('/Login')
+    }
     const a = this.state;
     const m =
       a.month === 10 || a.month === 11 || a.month === 12
